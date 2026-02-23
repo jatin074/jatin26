@@ -139,7 +139,7 @@ export default function ServicesSection() {
                     </div>
 
                 </div> */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 auto-rows-[220px] gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-5 sm:auto-rows-[220px] gap-4">
 
           {/* 1️⃣ UI/UX DESIGN SYSTEMS */}
           <div className="group lg:col-span-2 lg:row-span-2 relative bg-[#111] sm:rounded-[20px] rounded-2xl p-6 sm:p-8 overflow-hidden border border-white/5 transition-all duration-500 hover:bg-white hover:border-black hover:-translate-y-2">

@@ -20,7 +20,7 @@ export default function HeroSection() {
     return (
         <section
             id="home"
-            className="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-6"
+            className="relative h-[90vh] flex flex-col justify-center items-center text-center px-6"
         >
             {/* Content */}
             <div className="relative z-10 container">
