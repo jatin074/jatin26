@@ -139,9 +139,9 @@ export default function ServicesSection() {
                     </div>
 
                 </div> */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 sm:auto-rows-[220px] gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-5 sm:auto-rows-[250px] gap-4">
 
-          {/* 1️⃣ UI/UX DESIGN SYSTEMS */}
+          {/* 1️⃣ UX STRATEGY & RESEARCH */}
           <div className="group lg:col-span-2 lg:row-span-2 relative bg-[#111] sm:rounded-[20px] rounded-2xl p-6 sm:p-8 overflow-hidden border border-white/5 transition-all duration-500 hover:bg-white hover:border-black hover:-translate-y-2">
 
             <div className="mb-6 w-10 h-10 rounded-lg bg-white/5 group-hover:bg-black flex items-center justify-center border border-white/10 group-hover:border-black transition-all duration-500">
@@ -149,69 +149,17 @@ export default function ServicesSection() {
             </div>
 
             <h3 className="mb-4 heading-light-sm group-hover:text-black transition duration-500">
-              UI/UX Design Systems
+              UX Strategy & User Research
             </h3>
 
             <p className="max-w-sm text-white/60 group-hover:text-black/70 transition duration-500">
-              Crafting scalable design systems and intuitive digital experiences
-              rooted in usability and structured visual language.
+              Conducting user research, defining personas, mapping journeys,
+              and aligning product direction with real user needs and business goals.
             </p>
           </div>
 
 
-          {/* 2️⃣ FRONTEND ARCHITECTURE */}
-          <div className="group lg:col-span-3 relative bg-[#383838] sm:rounded-[20px] rounded-2xl p-6 sm:p-8 overflow-hidden border border-white/5 transition-all duration-500 hover:bg-white hover:border-black hover:-translate-y-2">
-
-            <div className="mb-6 w-10 h-10 rounded-lg bg-white/5 group-hover:bg-black flex items-center justify-center border border-white/10 group-hover:border-black transition-all duration-500">
-              <Code2 size={18} className="text-white/60 group-hover:text-white transition duration-500" />
-            </div>
-
-            <h3 className="mb-4 heading-light-sm group-hover:text-black transition duration-500">
-              Frontend Architecture & Interactions
-            </h3>
-
-            <p className="max-w-md text-white/60 group-hover:text-black/70 transition duration-500">
-              Engineering scalable frontend systems with performance-driven structure
-              and refined micro-interactions.
-            </p>
-          </div>
-
-
-          {/* 3️⃣ BRAND IDENTITY */}
-          <div className="group lg:col-span-1 relative bg-[#111] sm:rounded-[20px] rounded-2xl p-6 overflow-hidden border border-white/5 transition-all duration-500 hover:bg-white hover:border-black hover:-translate-y-2">
-
-            <div className="mb-5 w-9 h-9 rounded-md bg-white/5 group-hover:bg-black flex items-center justify-center border border-white/10 group-hover:border-black transition-all duration-500">
-              <Palette size={16} className="text-white/60 group-hover:text-white transition duration-500" />
-            </div>
-
-            <h4 className="mb-3 heading-light-sm group-hover:text-black transition duration-500">
-              Brand Identity
-            </h4>
-
-            <p className="text-sm text-white/60 group-hover:text-black/70 transition duration-500">
-              Unified visual systems for clarity and trust.
-            </p>
-          </div>
-
-
-          {/* 4️⃣ AI INTEGRATION */}
-          <div className="group lg:col-span-2 relative bg-[#111] sm:rounded-[20px] rounded-2xl p-6 overflow-hidden border border-white/5 transition-all duration-500 hover:bg-white hover:border-black hover:-translate-y-2">
-
-            <div className="mb-5 w-9 h-9 rounded-md bg-white/5 group-hover:bg-black flex items-center justify-center border border-white/10 group-hover:border-black transition-all duration-500">
-              <Bot size={16} className="text-white/60 group-hover:text-white transition duration-500" />
-            </div>
-
-            <h4 className="mb-3 heading-light-sm group-hover:text-black transition duration-500">
-              AI-Integrated Experiences
-            </h4>
-
-            <p className="text-sm text-white/60 group-hover:text-black/70 transition duration-500">
-              Intelligent workflows and AI copilots built into real products.
-            </p>
-          </div>
-
-
-          {/* 5️⃣ PRODUCT INTERFACES */}
+          {/* 2️⃣ PRODUCT DESIGN & WIREFRAMING */}
           <div className="group lg:col-span-3 relative bg-[#383838] sm:rounded-[20px] rounded-2xl p-6 sm:p-8 overflow-hidden border border-white/5 transition-all duration-500 hover:bg-white hover:border-black hover:-translate-y-2">
 
             <div className="mb-6 w-10 h-10 rounded-lg bg-white/5 group-hover:bg-black flex items-center justify-center border border-white/10 group-hover:border-black transition-all duration-500">
@@ -219,17 +167,70 @@ export default function ServicesSection() {
             </div>
 
             <h3 className="mb-4 heading-light-sm group-hover:text-black transition duration-500">
-              Creative Product Interfaces
+              Product Design & Wireframing
             </h3>
 
             <p className="max-w-md text-white/60 group-hover:text-black/70 transition duration-500">
-              Purpose-driven layouts, typography systems,
-              and interaction-first interface design.
+              Translating ideas into structured wireframes, user flows, and
+              high-fidelity interfaces with usability at the core.
             </p>
           </div>
 
 
-          {/* 6️⃣ PERFORMANCE */}
+          {/* 3️⃣ CREATIVE DESIGN */}
+          <div className="group lg:col-span-1 relative bg-[#111] sm:rounded-[20px] rounded-2xl p-6 overflow-hidden border border-white/5 transition-all duration-500 hover:bg-white hover:border-black hover:-translate-y-2">
+
+            <div className="mb-5 w-9 h-9 rounded-md bg-white/5 group-hover:bg-black flex items-center justify-center border border-white/10 group-hover:border-black transition-all duration-500">
+              <Palette size={16} className="text-white/60 group-hover:text-white transition duration-500" />
+            </div>
+
+            <h4 className="mb-3 heading-light-sm group-hover:text-black transition duration-500">
+              Creative Design
+            </h4>
+
+            <p className="text-sm text-white/60 group-hover:text-black/70 transition duration-500">
+              Memorable designs that feel intuitive and comfortable.
+            </p>
+          </div>
+
+
+          {/* 4️⃣ DESIGN SYSTEMS */}
+          <div className="group lg:col-span-2 relative bg-[#111] sm:rounded-[20px] rounded-2xl p-6 overflow-hidden border border-white/5 transition-all duration-500 hover:bg-white hover:border-black hover:-translate-y-2">
+
+            <div className="mb-5 w-9 h-9 rounded-md bg-white/5 group-hover:bg-black flex items-center justify-center border border-white/10 group-hover:border-black transition-all duration-500">
+              <Bot size={16} className="text-white/60 group-hover:text-white transition duration-500" />
+            </div>
+
+            <h4 className="mb-3 heading-light-sm group-hover:text-black transition duration-500">
+              Scalable Design Systems
+            </h4>
+
+            <p className="text-sm text-white/60 group-hover:text-black/70 transition duration-500">
+              Building reusable component libraries and structured visual
+              systems for consistency across digital products.
+            </p>
+          </div>
+
+
+          {/* 5️⃣ FRONTEND ARCHITECTURE */}
+          <div className="group lg:col-span-3 relative bg-[#383838] sm:rounded-[20px] rounded-2xl p-6 sm:p-8 overflow-hidden border border-white/5 transition-all duration-500 hover:bg-white hover:border-black hover:-translate-y-2">
+
+            <div className="mb-6 w-10 h-10 rounded-lg bg-white/5 group-hover:bg-black flex items-center justify-center border border-white/10 group-hover:border-black transition-all duration-500">
+              <Code2 size={18} className="text-white/60 group-hover:text-white transition duration-500" />
+            </div>
+
+            <h3 className="mb-4 heading-light-sm group-hover:text-black transition duration-500">
+              Frontend Architecture
+            </h3>
+
+            <p className="max-w-md text-white/60 group-hover:text-black/70 transition duration-500">
+              Translating design systems into scalable, maintainable frontend
+              structures with clean component-driven architecture.
+            </p>
+          </div>
+
+
+          {/* 6️⃣ PERFORMANCE & OPTIMIZATION */}
           <div className="group lg:col-span-2 relative bg-[#111] sm:rounded-[20px] rounded-2xl p-6 sm:p-8 overflow-hidden border border-white/5 transition-all duration-500 hover:bg-white hover:border-black hover:-translate-y-2">
 
             <div className="mb-6 w-10 h-10 rounded-lg bg-white/5 group-hover:bg-black flex items-center justify-center border border-white/10 group-hover:border-black transition-all duration-500">
@@ -241,8 +242,8 @@ export default function ServicesSection() {
             </h3>
 
             <p className="max-w-sm text-white/60 group-hover:text-black/70 transition duration-500">
-              Production-grade performance, accessibility,
-              and scalable frontend delivery.
+              Ensuring accessibility, responsiveness, and production-grade
+              performance across devices and environments.
             </p>
           </div>
 

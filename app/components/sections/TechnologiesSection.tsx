@@ -77,7 +77,7 @@ export default function TechnologiesSection() {
                 </div>
 
                 {/* RIGHT SIDE SCROLLING COLUMNS */}
-                <div className="relative h-[600px] overflow-hidden hidden lg:grid grid-cols-2 gap-6">
+                <div className="relative h-[600px] overflow-hidden grid grid-cols-2 gap-6">
 
                     {/* COLUMN 1 */}
                     <div className="animate-scrollUp space-y-6 opacity-80">
@@ -90,7 +90,7 @@ export default function TechnologiesSection() {
                                 >
                                     <Icon
                                         size={26}
-                                        className="transition duration-300 grayscale group-hover:grayscale-0"
+                                        className="transition duration-300 md:grayscale group-hover:grayscale-0"
                                         style={{ color: tech.color }}
                                     />
                                     <span className="text-sm font-medium text-white/70 group-hover:text-white transition">
@@ -112,7 +112,7 @@ export default function TechnologiesSection() {
                                 >
                                     <Icon
                                         size={26}
-                                        className="transition duration-300 grayscale group-hover:grayscale-0"
+                                        className="transition duration-300 md:grayscale group-hover:grayscale-0"
                                         style={{ color: tech.color }}
                                     />
                                     <span className="text-sm font-medium text-white/60 group-hover:text-white transition">
@@ -130,23 +130,6 @@ export default function TechnologiesSection() {
                     <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-10" />
                 </div>
 
-                {/* MOBILE GRID (Colorful Default) */}
-                <div className="lg:hidden grid grid-cols-2 sm:grid-cols-3 gap-6">
-                    {technologies.map((tech, index) => {
-                        const Icon = tech.icon;
-                        return (
-                            <div
-                                key={index}
-                                className="w-full h-24 border border-white/10 rounded-xl bg-[#111] flex flex-col items-center justify-center gap-2"
-                            >
-                                <Icon size={28} style={{ color: tech.color }} />
-                                <span className="text-xs text-white/80">
-                                    {tech.name}
-                                </span>
-                            </div>
-                        );
-                    })}
-                </div>
             </div>
         </div>
         </section>

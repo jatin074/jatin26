@@ -10,11 +10,11 @@ export default function ExperienceSection() {
         {/* Section Heading */}
         <div className="text-center mb-20">
           <h2 className="text-4xl sm:text-5xl font-semibold text-white">
-            Experience & Education
+            My Journey
           </h2>
           <p className="mt-4 text-white/60 max-w-2xl mx-auto">
-            My journey in design, frontend engineering, and building
-            scalable digital systems.
+            From engineering foundations to product design and frontend systems
+            building meaningful digital experiences with purpose and precision.
           </p>
         </div>
 
