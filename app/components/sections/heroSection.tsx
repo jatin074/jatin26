@@ -32,7 +32,7 @@ export default function HeroSection() {
                     <br />
                     <span className="text-white/60">Scalable Frontend Engineer</span>
                     <br />
-                    Powered by AI
+                    with Precision & AI
                 </h1>
 
                 <p className="mt-6 subheading-light mx-auto">
@@ -41,12 +41,12 @@ export default function HeroSection() {
                 </p>
 
                 <div className="mt-10 flex items-center justify-center gap-6">
-                    <Button variant="whiteOutline" href="#about">
+                    <Button variant="whiteOutline" href="#projects">
                         View Projects
                     </Button>
 
                     <Button variant="white" href="#contact">
-                        Contact Me
+                        Get in Touch
                     </Button>
                 </div>
             </div>

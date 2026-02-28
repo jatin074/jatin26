@@ -5,6 +5,7 @@ import {
     ButtonHTMLAttributes,
     AnchorHTMLAttributes,
     ReactNode,
+    MouseEvent,
 } from "react";
 
 type Variant =
@@ -39,7 +40,7 @@ export default function Button(props: Props) {
     } = props;
 
     const baseStyles =
-        "px-6 py-3 rounded-xl text-sm font-medium transition duration-300 inline-flex items-center justify-center";
+        "relative overflow-hidden px-6 py-3 rounded-xl text-sm font-medium inline-flex items-center justify-center transition duration-300 group";
 
     const variants: Record<Variant, string> = {
         white: "bg-white text-black hover:bg-gray-200",
@@ -55,9 +56,40 @@ export default function Button(props: Props) {
     // 🔹 LINK VERSION
     if ("href" in props && props.href) {
         const { href, ...linkProps } = props;
+
+        const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+            if (href.startsWith("#")) {
+                e.preventDefault();
+
+                const el = document.querySelector(href);
+                if (el) {
+                    el.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                }
+            }
+
+            if (linkProps.onClick) {
+                linkProps.onClick(e);
+            }
+        };
+
         return (
-            <Link href={href} className={classes} {...linkProps}>
-                {children}
+            <Link
+                href={href}
+                className={classes}
+                onClick={handleClick}
+                {...linkProps}
+            >
+                <span className="relative h-[1.2em] overflow-hidden flex items-center">
+                    <span className="transition-transform duration-300 group-hover:-translate-y-full">
+                        {children}
+                    </span>
+                    <span className="absolute top-full left-0 transition-transform duration-300 group-hover:-translate-y-full">
+                        {children}
+                    </span>
+                </span>
             </Link>
         );
     }
@@ -67,7 +99,14 @@ export default function Button(props: Props) {
 
     return (
         <button className={classes} {...buttonProps}>
-            {children}
+            <span className="relative h-[1.2em] overflow-hidden flex items-center">
+                <span className="transition-transform duration-300 group-hover:-translate-y-full">
+                    {children}
+                </span>
+                <span className="absolute top-full left-0 transition-transform duration-300 group-hover:-translate-y-full">
+                    {children}
+                </span>
+            </span>
         </button>
     );
 }

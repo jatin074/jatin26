@@ -3,7 +3,7 @@
 export default function WhyMeSection() {
   const stats = [
     {
-      number: "30+",
+      number: "50+",
       label: "Digital Products Designed",
     },
     {
@@ -11,8 +11,8 @@ export default function WhyMeSection() {
       label: "Landing Pages Designed",
     },
     {
-      number: "20+",
-      label: "React / Next / Tailwind Projects",
+      number: "10+",
+      label: "SaaS Dashboards Built",
     },
   ];
 
@@ -65,7 +65,7 @@ export default function WhyMeSection() {
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="group relative overflow-hidden bg-[#f5f5f5] border border-black/5 rounded-2xl p-8 h-[280px] flex flex-col justify-between transition-all duration-500 hover:bg-black hover:-translate-y-2"
+                  className="group relative overflow-hidden bg-[#f5f5f5] border border-black/5 rounded-2xl p-8 sm:h-[280px] flex flex-col justify-between transition-all duration-500 hover:bg-black hover:-translate-y-2"
                 >
                   {/* Faded Background Number */}
                   <span className="absolute -top-6 -right-4 text-[70px] font-normal text-slate-300/40 select-none pointer-events-none transition duration-500">
@@ -86,20 +86,20 @@ export default function WhyMeSection() {
             </div>
 
             {/* BIG HORIZONTAL CARD */}
-            <div className="group relative overflow-hidden bg-[#f5f5f5] border border-black/5 rounded-2xl p-10 h-[240px] flex flex-col justify-between transition-all duration-500 hover:bg-black hover:-translate-y-2">
+            <div className="group relative overflow-hidden sm:bg-[#f5f5f5] bg-black border border-black/5 rounded-2xl p-10 h-[240px] flex flex-col justify-between transition-all duration-500 hover:bg-black hover:-translate-y-2">
 
               {/* Faded Background Text */}
-              <span className="absolute -top-8 right-0 text-[120px] font-normal text-slate-300/30 select-none pointer-events-none transition duration-500 group-hover:text-slate-500/20">
+              <span className="absolute -top-6 sm:right-4 -right-4 text-[70px] font-normal text-slate-300/40 select-none pointer-events-none transition duration-500">
                 3+
               </span>
 
               {/* Main Number */}
-              <h3 className="text-6xl font-normal text-black transition duration-500 group-hover:text-white relative z-10">
+              <h3 className="text-6xl font-normal text-white sm:text-black transition duration-500 group-hover:text-white relative z-10">
                 3+
               </h3>
 
               {/* Description */}
-              <p className="text-black/70 text-base transition duration-500 group-hover:text-white/70 max-w-md">
+              <p className="sm:text-black/70 text-white/70 text-base transition duration-500 group-hover:text-white/70 max-w-md">
                 Years of professional experience building scalable SaaS
                 platforms and performance-driven digital products.
               </p>

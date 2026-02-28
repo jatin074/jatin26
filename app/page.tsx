@@ -33,7 +33,7 @@ export default function Home() {
       <section id="technologies">
         <TechnologiesSection />
       </section>
-      <section id="projects">
+      <section>
        <StatsSection />
       </section>
       <section id="projects">

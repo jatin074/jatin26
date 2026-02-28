@@ -6,6 +6,7 @@ import {
   Instagram,
   MessageCircle,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -14,10 +15,10 @@ export default function Footer() {
         <div>
 
           {/* OUTER CARD */}
-          <div className="bg-white sm:rounded-[40px] rounded-xl border border-black/5 p-6 sm:p-10 shadow-lg">
+          <div className="bg-white sm:rounded-4xl rounded-xl border border-black/5 p-6 sm:p-10 shadow-lg">
 
             {/* INNER CARD */}
-            <div className="bg-white border border-black/5 rounded-3xl p-8 sm:p-12">
+            <div className="bg-white sm:border border-black/5 rounded-3xl p-0 sm:p-12">
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
 
@@ -105,7 +106,7 @@ export default function Footer() {
                       target="_blank"
                       className="w-10 h-10 rounded-md border border-black/10 flex items-center justify-center text-black/60 hover:text-black hover:border-black transition"
                     >
-                      <Linkedin size={18} />
+                      <Image src="/images/linkedin.svg" alt="LinkedIn" width={18} height={18} />
                     </a>
 
                     <a
@@ -113,7 +114,7 @@ export default function Footer() {
                       target="_blank"
                       className="w-10 h-10 rounded-md border border-black/10 flex items-center justify-center text-black/60 hover:text-black hover:border-black transition"
                     >
-                      <Instagram size={18} />
+                      <Image src="/images/instagram.svg" alt="Instagram" width={18} height={18} />
                     </a>
 
                     <a
@@ -121,7 +122,7 @@ export default function Footer() {
                       target="_blank"
                       className="w-10 h-10 rounded-md border border-black/10 flex items-center justify-center text-black/60 hover:text-black hover:border-black transition"
                     >
-                      <MessageCircle size={18} />
+                      <Image src="/images/whatsapp.svg" alt="WhatsApp" width={18} height={18} />
                     </a>
                   </div>
                 </div>
@@ -129,7 +130,7 @@ export default function Footer() {
               </div>
 
               {/* Bottom Divider */}
-              <div className="mt-12 pt-6 border-t border-black/5 flex flex-col md:flex-row items-center justify-between text-black/50 text-sm">
+              <div className="mt-12 pt-6 border-t border-black/10 flex flex-col md:flex-row sm:text-start text-center items-center sm:justify-between justify-center text-black/50 text-sm">
 
                 <p>
                   © {new Date().getFullYear()} Jatin Tiwari. All rights reserved.

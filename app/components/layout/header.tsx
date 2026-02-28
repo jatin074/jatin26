@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { Menu, X } from "lucide-react";
+import Button from "../ui/Button";
 
 const NAV_LINKS = [
   { label: "Services", id: "services" },
@@ -81,12 +82,8 @@ export default function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <button
-            onClick={() => handleScrollTo("contact")}
-            className="hidden md:block px-5 py-2 rounded-lg bg-white text-black text-sm font-medium hover:bg-gray-200 transition"
-          >
-            Contact Me
-          </button>
+          <Button onClick={() => handleScrollTo("contact")} variant="white">Contact Me</Button>
+
 
           {/* Mobile Toggle */}
           <button
@@ -99,9 +96,8 @@ export default function Header() {
 
         {/* Mobile Dropdown */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-            open ? "max-h-96 opacity-100 pb-6" : "max-h-0 opacity-0"
-          }`}
+          className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${open ? "max-h-96 opacity-100 pb-6" : "max-h-0 opacity-0"
+            }`}
         >
           <div className="flex flex-col gap-5 pt-2">
             {NAV_LINKS.map((link) => (
@@ -114,12 +110,8 @@ export default function Header() {
               </button>
             ))}
 
-            <button
-              onClick={() => handleScrollTo("contact")}
-              className="mt-2 px-5 py-3 rounded-lg bg-white text-black font-medium hover:bg-gray-200 transition"
-            >
-              Contact Me
-            </button>
+
+            <Button onClick={() => handleScrollTo("contact")} variant="white">Contact Me</Button>
           </div>
         </div>
 

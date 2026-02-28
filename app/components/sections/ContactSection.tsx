@@ -37,7 +37,7 @@ const contactItems = [
 
 export default function ContactSection() {
   return (
-    <section id="contact">
+    <section>
       <div className="container-sm">
         {/* Heading */}
         <div className="text-center mb-16 sm:mb-24">

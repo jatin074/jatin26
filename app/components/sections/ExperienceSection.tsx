@@ -164,7 +164,7 @@ function ExperienceCard({
       {/* Gradient Hover Background */}
       <div
         className={`
-          absolute inset-0 opacity-0  group-hover:opacity-100
+          absolute inset-0 sm:opacity-0  group-hover:opacity-100
           transition-opacity duration-500
           bg-gradient-to-r ${gradientOverlay}
           pointer-events-none

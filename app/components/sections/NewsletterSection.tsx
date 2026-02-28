@@ -13,7 +13,7 @@ export default function NewsletterSection() {
       <div className="container-sm">
 
         {/* BLACK CARD */}
-        <div className="relative group rounded-xl sm:rounded-[40px] overflow-hidden px-6 sm:px-14 py-16 sm:py-20 text-center border bg-black border-white/10 transition-all duration-500 hover:border-white/30 hover:shadow-[0_32px_80px_-24px_rgba(0,0,0,0.85)]">
+        <div className="relative group rounded-xl sm:rounded-4xl overflow-hidden px-6 sm:px-14 py-16 sm:py-20 text-center border bg-black border-white/10 transition-all duration-500 hover:border-white/30 hover:shadow-[0_32px_80px_-24px_rgba(0,0,0,0.85)]">
 
           {/* Subtle top glow */}
           <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-white/10 via-transparent to-transparent opacity-30" />

@@ -7,7 +7,7 @@ import { WORKS } from "@/app/lib/work";
 
 export default function WorkSection() {
   return (
-    <section id="projects" className="bg-white">
+    <section className="bg-white">
       <div className="container-sm">
         {/* Section Heading */}
         <div className="mb-16 sm:mb-20 text-center">
