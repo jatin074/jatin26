@@ -3,6 +3,7 @@ import ContactSection from "./components/sections/ContactSection";
 import DesignProcess from "./components/sections/DesignProcess";
 import ExperienceSection from "./components/sections/ExperienceSection";
 import HeroSection from "./components/sections/heroSection";
+import NewsletterSection from "./components/sections/NewsletterSection";
 import ServicesSection from "./components/sections/ServicesSection";
 import StatsSection from "./components/sections/StatsSection";
 import TechnologiesSection from "./components/sections/TechnologiesSection";
@@ -41,6 +42,7 @@ export default function Home() {
       <section id="contact">
         <ContactSection />
       </section>
+      <NewsletterSection/>
     </main>
   );
 }

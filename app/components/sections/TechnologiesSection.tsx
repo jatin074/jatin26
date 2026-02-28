@@ -1,5 +1,6 @@
 "use client";
 
+import { Check } from "lucide-react";
 import {
     SiReact,
     SiNextdotjs,
@@ -52,7 +53,7 @@ export default function TechnologiesSection() {
 
                 {/* LEFT CONTENT */}
                 <div>
-                    <p className="text-sm text-white/60 font-medium mb-4">
+                    <p className="sectionlabel text-white/50!">
                         Tools & Technologies
                     </p>
 
@@ -68,11 +69,11 @@ export default function TechnologiesSection() {
                     </p>
 
                     <ul className="mt-8 space-y-3 text-white/70">
-                        <li>✔ Modern UI Design Systems</li>
-                        <li>✔ React & Next.js Architecture</li>
-                        <li>✔ TypeScript & Scalable Code</li>
-                        <li>✔ Cloud-ready Backend</li>
-                        <li>✔ Performance Optimization</li>
+                        <li className="flex items-center gap-2"><Check size={18} className="text-purple-500" /> Modern UI Design Systems</li>
+                        <li className="flex items-center gap-2"><Check size={18} className="text-purple-500"/> React & Next.js Architecture</li>
+                        <li className="flex items-center gap-2"><Check size={18} className="text-purple-500"/> TypeScript & Scalable Code</li>
+                        <li className="flex items-center gap-2"><Check size={18} className="text-purple-500"/> Cloud-ready Backend</li>
+                        <li className="flex items-center gap-2"><Check size={18} className="text-purple-500"/> Performance Optimization</li>
                     </ul>
                 </div>
 
@@ -90,7 +91,7 @@ export default function TechnologiesSection() {
                                 >
                                     <Icon
                                         size={26}
-                                        className="transition duration-300 md:grayscale group-hover:grayscale-0"
+                                        className="transition duration-300"
                                         style={{ color: tech.color }}
                                     />
                                     <span className="text-sm font-medium text-white/70 group-hover:text-white transition">

@@ -21,7 +21,7 @@ export default function TechSlider({ items }: TechSliderProps) {
     const duplicatedItems = [...items, ...items];
 
     return (
-        <div className="relative bg-white/90 backdrop-blur-md rounded-xl py-6 shadow-2xl overflow-hidden">
+        <div className="relative bg-white/90 backdrop-blur-md rounded-xl py-6 shadow-xl overflow-hidden">
 
             {/* LEFT MIST */}
             <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white via-white/70 to-transparent z-20 pointer-events-none" />
@@ -66,7 +66,7 @@ export default function TechSlider({ items }: TechSliderProps) {
                                     fill
                                     className="
                     object-contain
-                    sm:grayscale
+                   
                     opacity-100
                     transition duration-300
                     group-hover:grayscale-0

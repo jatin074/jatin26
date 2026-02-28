@@ -10,7 +10,8 @@ import {
     Code2,
     BarChart3,
     LayoutGrid,
-    Rocket
+    Rocket,
+    Palette
 } from "lucide-react";
 import SectionHeading from "../ui/SectionHeading";
 
@@ -84,7 +85,7 @@ export default function DesignProcess() {
             number: "03.",
             title: "UI Design & Design Systems",
             desc: "Designing modern, visually refined interfaces in Figma with scalable design systems, reusable components, and consistent visual language to ensure long-term product growth.",
-            icon: PenTool,
+            icon: Palette,
             ref: processRef3,
         },
         {
@@ -141,7 +142,7 @@ export default function DesignProcess() {
                                     ref={step.ref}
                                     className="processCircle flex items-center justify-center"
                                 >
-                                    <Icon size={32} className="text-black" />
+                                    <Icon size={32} />
                                 </div>
 
                                 {/* Title */}

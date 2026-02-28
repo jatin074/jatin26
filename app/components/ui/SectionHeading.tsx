@@ -2,11 +2,13 @@ interface SectionHeadingProps {
     heading: string;
     subheading: string;
     dark?: boolean;
+    label ?: string;
 }
 
 export default function SectionHeading({
     heading,
     subheading,
+    label,
     dark = false,
 }: SectionHeadingProps) {
     return (
@@ -20,6 +22,9 @@ export default function SectionHeading({
             >
                 {/* LEFT */}
                 <div className="lg:col-span-5 2xl:col-span-6">
+                    <p className="sectionlabel">
+                        {label}
+                    </p>
                     <h2
                         className={`heading-dark lg:max-w-md 2xl:max-w-lg ${dark ? "text-white" : ""
                             }`}

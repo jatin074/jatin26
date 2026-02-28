@@ -20,10 +20,13 @@ export default function HeroSection() {
     return (
         <section
             id="home"
-            className="relative sm:h-[90vh] h-[80vh] flex flex-col justify-center items-center text-center px-6"
+            className="relative sm:h-[90vh] h-[84vh] flex flex-col justify-center items-center text-center px-6"
         >
             {/* Content */}
             <div className="relative z-10 container">
+                <p className="text-sm sm:text-base font-medium tracking-[0.3em] uppercase text-white/70 mb-4 animate-fade-in">
+                    Hi, I&apos;m Jatin
+                </p>
                 <h1 className="heading-light">
                     UI/UX Designer &
                     <br />
