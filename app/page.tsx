@@ -4,6 +4,7 @@ import DesignProcess from "./components/sections/DesignProcess";
 import ExperienceSection from "./components/sections/ExperienceSection";
 import HeroSection from "./components/sections/heroSection";
 import ServicesSection from "./components/sections/ServicesSection";
+import StatsSection from "./components/sections/StatsSection";
 import TechnologiesSection from "./components/sections/TechnologiesSection";
 import WorkSection from "./components/sections/WorkSection";
 
@@ -30,6 +31,9 @@ export default function Home() {
       </section>
       <section id="technologies">
         <TechnologiesSection />
+      </section>
+      <section id="projects">
+       <StatsSection />
       </section>
       <section id="projects">
         <WorkSection />
