@@ -1,11 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import {
-  Linkedin,
-  Instagram,
-  MessageCircle,
-} from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {
@@ -23,7 +18,7 @@ export default function Footer() {
               <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
 
                 {/* Brand */}
-                <div className="md:col-span-1">
+                <div className="md:col-span-2">
                   <div className="w-10 h-10 bg-black rounded-md flex items-center justify-center mb-6">
                     <span className="text-white font-semibold tracking-widest">
                       JT
@@ -43,8 +38,13 @@ export default function Footer() {
                   </h4>
                   <ul className="space-y-3 text-black/60 text-sm">
                     <li>
-                      <Link href="#about" className="hover:text-black transition">
-                        About
+                      <Link href="#services" className="hover:text-black transition">
+                        Services
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="#experience" className="hover:text-black transition">
+                        Experience
                       </Link>
                     </li>
                     <li>
@@ -53,46 +53,13 @@ export default function Footer() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="#skills" className="hover:text-black transition">
-                        Skills
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#contact" className="hover:text-black transition">
-                        Contact
+                      <Link href="#technologies" className="hover:text-black transition">
+                        Technologies
                       </Link>
                     </li>
                   </ul>
                 </div>
 
-                {/* Resources */}
-                <div>
-                  <h4 className="text-black font-medium mb-6">
-                    Resources
-                  </h4>
-                  <ul className="space-y-3 text-black/60 text-sm">
-                    <li>
-                      <Link href="#" className="hover:text-black transition">
-                        Case Studies
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#" className="hover:text-black transition">
-                        Design Process
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#" className="hover:text-black transition">
-                        UI Systems
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#" className="hover:text-black transition">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
 
                 {/* Social */}
                 <div>

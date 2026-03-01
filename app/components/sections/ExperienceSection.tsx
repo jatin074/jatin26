@@ -85,7 +85,7 @@ export default function ExperienceSection() {
             <div className="space-y-6">
               <ExperienceCard
                 title="CloseDigit LLP"
-                subtitle="UI/UX Developer"
+                subtitle="UI/UX Designer & Frontend Developer"
                 period="2023 — 2025"
                 isPresent={false}
                 accent="work"

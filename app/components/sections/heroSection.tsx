@@ -20,7 +20,7 @@ export default function HeroSection() {
     return (
         <section
             id="home"
-            className="relative sm:h-[90vh] h-[84vh] flex flex-col justify-center items-center text-center px-6"
+            className="relative sm:h-[90vh] h-[80vh] flex flex-col justify-center items-center text-center px-6"
         >
             {/* Content */}
             <div className="relative z-10 container">
@@ -40,7 +40,7 @@ export default function HeroSection() {
                     modern technologies and a strong focus on user experience.
                 </p>
 
-                <div className="mt-10 flex items-center justify-center gap-6">
+                <div className="mt-10 sm:flex items-center justify-center sm:gap-6 gap-2 hidden">
                     <Button variant="whiteOutline" href="#projects">
                         View Projects
                     </Button>

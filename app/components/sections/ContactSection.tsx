@@ -94,31 +94,35 @@ export default function ContactSection() {
           </div>
 
           {/* CV Download Card - featured */}
-          <a
-            href="/Jay-Tiwari-CV.pdf"
-            download
-            className="group relative flex flex-col justify-between rounded-2xl p-6 sm:p-8 overflow-hidden border border-black/8 bg-black text-white transition-all duration-400 ease-out hover:border-black hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.25)] hover:-translate-y-1"
+          {/* Featured Quote Card */}
+          <div
+            className="
+    group relative flex flex-col justify-between 
+    rounded-2xl p-6 sm:p-8 overflow-hidden 
+    border border-black/8 
+    bg-black text-white 
+    transition-all duration-400 ease-out 
+    hover:border-black hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.25)] 
+    hover:-translate-y-1
+  "
           >
+            {/* Subtle Gradient Hover Overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
             <div className="relative z-10">
-              <div className="mb-6 w-12 h-12 rounded-xl flex items-center justify-center bg-white/10 border border-white/20 group-hover:bg-white/20 transition-colors">
-                <Download size={22} className="text-white" strokeWidth={1.5} />
-              </div>
-              <p className="text-xs font-semibold tracking-wider uppercase text-white/60 mb-2">
-                Resume
+              <p className="text-xs font-semibold tracking-wider uppercase text-white/60 mb-4">
+                Design Philosophy
               </p>
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Download CV
+
+              <h3 className="text-lg sm:text-3xl font-normal leading-snug">
+                “Design is not just what it looks like and feels like. Design is how it works.”
               </h3>
-              <p className="text-white/70 text-sm leading-relaxed">
-                View my full resume and experience.
-              </p>
             </div>
-            <span className="relative z-10 mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/80 group-hover:text-white group-hover:gap-3 transition-all">
-              Get PDF
-              <ArrowUpRight size={16} strokeWidth={2} />
+
+            <span className="relative z-10 mt-8 text-sm font-medium text-white/40 group-hover:text-white/70 transition-all">
+              — Steve Jobs
             </span>
-          </a>
+          </div>
         </div>
 
         {/* Bottom CTA */}

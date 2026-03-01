@@ -6,13 +6,13 @@ import Button from "../ui/Button";
 
 const NAV_LINKS = [
   { label: "Services", id: "services" },
-  { label: "About", id: "experience" },
+  { label: "Experience", id: "experience" },
   { label: "Projects", id: "projects" },
   { label: "Technologies", id: "technologies" },
 ];
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
+  const [, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement | null>(null);
 
@@ -58,13 +58,13 @@ export default function Header() {
       ref={headerRef}
       className="absolute top-1 rounded-xl px-4 left-0 w-full z-50 transition-all duration-500 bg-black/80 backdrop-blur-xl border-b border-white/10"
     >
-      <div className="container">
+      <div className="container-sm">
 
         {/* Header Top Row */}
         <div className="flex items-center justify-between py-4">
 
           {/* Logo */}
-          <div className="text-white font-bold text-xl tracking-wider">
+          <div className="text-white font-bold text-xl tracking-wider w-30">
             JT
           </div>
 
@@ -82,9 +82,10 @@ export default function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <Button onClick={() => handleScrollTo("contact")} variant="white">Contact Me</Button>
+          <div className="hidden md:block">
+            <Button onClick={() => handleScrollTo("contact")} variant="white">Contact Me</Button>
 
-
+          </div>
           {/* Mobile Toggle */}
           <button
             className="md:hidden text-white transition"

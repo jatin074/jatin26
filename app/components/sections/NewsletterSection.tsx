@@ -45,7 +45,7 @@ export default function NewsletterSection() {
               meaningful digital experiences.
             </h2>
 
-            <p className="mt-10! subheading-light-sm max-w-xl mx-auto">
+            <p className="sm:mt-10! mt-7 subheading-light-sm max-w-xl mx-auto">
               Share a bit about your product or idea, and I&apos;ll get back with
               ways we can turn it into a polished, scalable experience.
             </p>

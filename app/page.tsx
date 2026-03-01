@@ -1,3 +1,4 @@
+import Footer from "./components/layout/Footer";
 import Header from "./components/layout/header";
 import ContactSection from "./components/sections/ContactSection";
 import DesignProcess from "./components/sections/DesignProcess";
@@ -12,7 +13,7 @@ import WorkSection from "./components/sections/WorkSection";
 
 export default function Home() {
   return (
-    <main className="space-y-10 sm:space-y-20 2xl:space-y-30 pb-10 sm:pb-20 bg-white">
+    <main className="space-y-10 sm:space-y-20 2xl:space-y-30 bg-white">
 
       <section className="sm:px-4 px-2 sm:pt-4 pt-2 bg-white">
         <div className="bg-black rounded-xl relative">
@@ -34,7 +35,7 @@ export default function Home() {
         <TechnologiesSection />
       </section>
       <section>
-       <StatsSection />
+        <StatsSection />
       </section>
       <section id="projects">
         <WorkSection />
@@ -42,7 +43,8 @@ export default function Home() {
       <section id="contact">
         <ContactSection />
       </section>
-      <NewsletterSection/>
+      <NewsletterSection />
+      <Footer />
     </main>
   );
 }

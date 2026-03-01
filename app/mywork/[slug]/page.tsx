@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Briefcase, CheckCircle2 } from "lucide-react";
 import { getWorkBySlug, getAllWorkSlugs } from "@/app/lib/work";
+import Button from "@/app/components/ui/Button";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -85,17 +86,28 @@ export default async function WorkDetailPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Cover image */}
-        <div className="relative rounded-2xl overflow-hidden border border-black/8 mb-16 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)]">
+        {/* Cover Media (Image or Behance Embed) */}
+        <div className="relative rounded-2xl overflow-hidden border border-black/8 mb-16 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] bg-white">
           <div className="aspect-[16/10] sm:aspect-[16/9] bg-black/5">
-            <Image
-              src={work.image}
-              alt={work.title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 896px"
-              priority
-            />
+            {work.behanceEmbed ? (
+              <iframe
+                src={work.behanceEmbed}
+                className="w-full h-full overflow-hidden"
+                allowFullScreen
+                loading="lazy"
+                allow="clipboard-write"
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+            ) : (
+              <Image
+                src={work.image}
+                alt={work.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 896px"
+                priority
+              />
+            )}
           </div>
         </div>
 
@@ -169,48 +181,72 @@ export default async function WorkDetailPage({ params }: Props) {
         <hr className="border-black/8 mb-16" />
 
         {/* Prev / Next */}
-        <nav className="flex flex-col sm:flex-row gap-6 sm:gap-8">
+        <nav className="flex flex-col sm:flex-row justify-between gap-8 border-t border-black/8 pt-12">
+
+          {/* Previous */}
           {prevWork ? (
             <Link
               href={`/mywork/${prevWork.slug}`}
-              className="group flex-1 p-6 rounded-xl border border-black/8 hover:border-black/15 hover:bg-black/[0.02] transition-all"
+              className="group flex items-center gap-5 max-w-md"
             >
-              <p className="text-xs font-medium tracking-wider uppercase text-black/50 mb-2">
-                Previous Project
-              </p>
-              <p className="font-semibold text-black group-hover:text-black/80 transition">
-                {prevWork.title}
-              </p>
+              {/* Thumbnail */}
+              <div className="relative w-24 h-16 rounded-lg overflow-hidden border border-black/10">
+                <Image
+                  src={prevWork.image}
+                  alt={prevWork.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Text */}
+              <div>
+                <p className="text-xs uppercase tracking-wider text-black/40 mb-1">
+                  ← Previous
+                </p>
+                <h3 className="text-base font-semibold text-black group-hover:translate-x-1 transition-transform">
+                  {prevWork.title}
+                </h3>
+              </div>
             </Link>
           ) : (
-            <div className="flex-1" />
+            <div />
           )}
+
+          {/* Next */}
           {nextWork ? (
             <Link
               href={`/mywork/${nextWork.slug}`}
-              className="group flex-1 p-6 rounded-xl border border-black/8 hover:border-black/15 hover:bg-black/[0.02] transition-all text-right"
+              className="group flex items-center gap-5 max-w-md sm:text-right sm:flex-row-reverse ml-auto"
             >
-              <p className="text-xs font-medium tracking-wider uppercase text-black/50 mb-2">
-                Next Project
-              </p>
-              <p className="font-semibold text-black group-hover:text-black/80 transition">
-                {nextWork.title}
-              </p>
+              {/* Thumbnail */}
+              <div className="relative w-24 h-16 rounded-lg overflow-hidden border border-black/10">
+                <Image
+                  src={nextWork.image}
+                  alt={nextWork.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Text */}
+              <div>
+                <p className="text-xs uppercase tracking-wider text-black/40 mb-1">
+                  Next →
+                </p>
+                <h3 className="text-base font-semibold text-black group-hover:-translate-x-1 transition-transform">
+                  {nextWork.title}
+                </h3>
+              </div>
             </Link>
           ) : (
-            <div className="flex-1" />
+            <div />
           )}
         </nav>
 
         {/* CTA */}
         <div className="mt-16 text-center">
-          <Link
-            href="/#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-medium rounded-xl hover:bg-black/90 transition-colors"
-          >
-            Start a Project
-            <ArrowLeft size={18} className="rotate-180" strokeWidth={2} />
-          </Link>
+          <Button href="/#contact" variant="black">Start a Project</Button>
         </div>
       </article>
     </div>
