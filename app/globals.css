@@ -52,6 +52,14 @@
   .sectionlabel {
     @apply text-sm font-medium tracking-[0.25em] uppercase text-black/50 mb-3;
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 

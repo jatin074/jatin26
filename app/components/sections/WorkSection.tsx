@@ -11,20 +11,16 @@ export default function WorkSection() {
       <div className="container-sm">
         {/* Section Heading */}
         <div className="mb-16 sm:mb-20 text-center">
-          <p className="sectionlabel">
-            Portfolio
-          </p>
-          <h2 className="heading-dark">
-            Selected Work
-          </h2>
+          <p className="sectionlabel">Portfolio</p>
+          <h2 className="heading-dark">Selected Work</h2>
           <p className="mt-5 text-black/60 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
             A collection of product-focused projects where design systems,
             frontend architecture, and performance-driven thinking come together.
           </p>
         </div>
 
-        {/* Grid - Bento-style layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-6 gap-5 sm:gap-6 auto-rows-fr">
+        {/* Grid - same on all screen sizes (stacked on mobile, bento on desktop) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 sm:gap-6 auto-rows-fr">
           {WORKS.map((work) => (
             <WorkCard key={work.slug} work={work} />
           ))}
@@ -41,17 +37,19 @@ function WorkCard({ work }: { work: (typeof WORKS)[0] }) {
     <Link
       href={`/mywork/${work.slug}`}
       className={`
-        group relative flex flex-col overflow-hidden rounded-2xl
+        group relative flex flex-col overflow-hidden sm:rounded-2xl rounded-xl
         border border-black/8 bg-white
         transition-all duration-400 ease-out
         hover:border-black/15 hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.12)]
         hover:-translate-y-1
-        ${isFeatured ? "lg:col-span-4 lg:row-span-2" : "lg:col-span-2"}
+        ${isFeatured ? "sm:col-span-2 lg:col-span-4 lg:row-span-2" : "sm:col-span-2 lg:col-span-2"}
       `}
     >
       {/* Image container */}
       <div
-        className={`relative bg-black/5 ${isFeatured ? "aspect-[16/10] sm:aspect-[16/9]" : "aspect-[4/3]"}`}
+        className={`relative bg-black/5 shrink-0 ${
+          isFeatured ? "aspect-[16/10] sm:aspect-[16/9]" : "aspect-[4/3]"
+        }`}
       >
         <Image
           src={work.image}
@@ -60,16 +58,14 @@ function WorkCard({ work }: { work: (typeof WORKS)[0] }) {
           sizes={
             isFeatured
               ? "(max-width: 1024px) 100vw, 66vw"
-              : "(max-width: 1024px) 100vw, 33vw"
+              : "(max-width: 1024px) 50vw, 33vw"
           }
           className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
         />
-        {/* Gradient overlay */}
         <div
           className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           aria-hidden
         />
-        {/* View badge */}
         <div className="absolute bottom-4 right-4 flex items-center gap-2 px-4 py-2 rounded-full bg-white/95 backdrop-blur-sm text-black text-sm font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
           View Case Study
           <ArrowUpRight size={16} strokeWidth={2} />
@@ -100,14 +96,14 @@ function WorkCard({ work }: { work: (typeof WORKS)[0] }) {
         </h3>
 
         <p
-          className={`text-black/60 leading-relaxed ${
+          className={`text-black/60 leading-relaxed flex-1 ${
             isFeatured ? "text-base sm:text-lg mb-4" : "text-sm mb-3"
           }`}
         >
           {work.description}
         </p>
 
-        <div className="mt-auto pt-4 flex items-center gap-2 text-black font-medium text-sm group-hover:gap-3 transition-all">
+        <div className="flex items-center gap-2 text-black font-medium text-sm group-hover:gap-3 transition-all">
           <span>View Project</span>
           <ArrowUpRight size={16} strokeWidth={2} />
         </div>

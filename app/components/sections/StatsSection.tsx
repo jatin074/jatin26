@@ -48,7 +48,7 @@ export default function WhyMeSection() {
 
             <div className="mt-12 border-l-2 border-black/10 pl-6">
               <p className="text-black/70 italic text-sm">
-                “Jay combines strong design sense with technical precision.
+                “Jatin combines strong design sense with technical precision.
                 Every project felt structured, thoughtful, and impactful.”
               </p>
               <p className="mt-4 text-black font-medium text-sm">

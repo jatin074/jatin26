@@ -4,8 +4,8 @@ import {
   Phone,
   Mail,
   MapPin,
-  Download,
   ArrowUpRight,
+  ExternalLink,
 } from "lucide-react";
 
 const contactItems = [
@@ -93,36 +93,35 @@ export default function ContactSection() {
             })}
           </div>
 
-          {/* CV Download Card - featured */}
-          {/* Featured Quote Card */}
-          <div
-            className="
-    group relative flex flex-col justify-between 
-    rounded-2xl p-6 sm:p-8 overflow-hidden 
-    border border-black/8 
-    bg-black text-white 
-    transition-all duration-400 ease-out 
-    hover:border-black hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.25)] 
-    hover:-translate-y-1
-  "
+          {/* Behance Portfolio Card */}
+          <a
+            href="https://www.behance.net/jt07"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex flex-col justify-between rounded-2xl p-6 sm:p-8 overflow-hidden border border-white/10 bg-black text-white transition-all duration-400 ease-out hover:border-white/20 hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.4)] hover:-translate-y-1"
           >
-            {/* Subtle Gradient Hover Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" aria-hidden />
 
             <div className="relative z-10">
-              <p className="text-xs font-semibold tracking-wider uppercase text-white/60 mb-4">
-                Design Philosophy
+              <div className="mb-6 w-12 h-12 rounded-xl flex items-center justify-center bg-white/10 border border-white/20 group-hover:bg-white/15 transition-colors">
+                <ExternalLink size={22} className="text-white" strokeWidth={1.5} />
+              </div>
+              <p className="text-xs font-semibold tracking-wider uppercase text-white/50 mb-3">
+                Full Portfolio
               </p>
-
-              <h3 className="text-lg sm:text-3xl font-normal leading-snug">
-                “Design is not just what it looks like and feels like. Design is how it works.”
+              <h3 className="text-xl sm:text-2xl font-semibold text-blue-500 leading-tight mb-2">
+                Behance
               </h3>
+              <p className="text-white/60 text-sm sm:text-base leading-relaxed">
+                More UI/UX work landing pages, app designs, dashboards & brand projects.
+              </p>
             </div>
 
-            <span className="relative z-10 mt-8 text-sm font-medium text-white/40 group-hover:text-white/70 transition-all">
-              — Steve Jobs
+            <span className="relative z-10 mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/70 group-hover:text-white group-hover:gap-3 transition-all">
+              Open Portfolio
+              <ArrowUpRight size={16} strokeWidth={2} />
             </span>
-          </div>
+          </a>
         </div>
 
         {/* Bottom CTA */}
