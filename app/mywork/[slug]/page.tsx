@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Calendar, Briefcase, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, Calendar, Briefcase, CheckCircle2, Gauge, UserRoundCheck } from "lucide-react";
 import { getWorkBySlug, getAllWorkSlugs } from "@/app/lib/work";
 import Button from "@/app/components/ui/Button";
+import { ProcessSectionHover } from "@/app/components/ui/ProcessSectionHover";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -55,7 +56,7 @@ export default async function WorkDetailPage({ params }: Props) {
         </div>
       </header>
 
-      <article className="max-w-4xl mx-auto px-6 pb-24">
+      <article className="max-w-5xl mx-auto px-6 pb-24">
         {/* Hero */}
         <div className="pt-12 sm:pt-16 mb-12">
           <p className="text-sm font-medium tracking-[0.2em] uppercase text-black/50 mb-4">
@@ -120,6 +121,378 @@ export default async function WorkDetailPage({ params }: Props) {
             {work.overview}
           </p>
         </section>
+
+
+        {(work.problemStatement || work.goals?.length) && (
+          <section className="border-y border-black/10">
+            {/* Problem Statement */}
+            {work.problemStatement && (
+              <div className="grid md:grid-cols-2 border-b border-black/10">
+                {/* Image */}
+                <div className="relative min-h-[280px] sm:min-h-[360px] border-r border-black/10">
+                  {/* <Image
+                    src="/images/projects/problem.svg"
+                    alt="Problem statement visual"
+                    fill
+                    className="object-contain"
+                  /> */}
+                </div>
+
+                {/* Content */}
+                <div className="bg-white px-8 sm:px-12 py-12 sm:py-16 flex flex-col justify-center">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-10 h-10 rounded-lg bg-black flex items-center justify-center border border-black">
+                      <Briefcase size={18} className="text-white" />
+                    </div>
+
+                    <h2 className="text-sm font-semibold tracking-[0.18em] uppercase text-black/45">
+                      Problem Statement
+                    </h2>
+                  </div>
+
+                  <p className="text-2xl sm:text-3xl font-semibold tracking-tight text-black leading-tight mb-5 max-w-xl">
+                    The core problem behind the experience.
+                  </p>
+
+                  <p className="text-base sm:text-lg text-black/65 leading-relaxed max-w-xl">
+                    {work.problemStatement}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Objectives & Goals */}
+            {work.goals?.length && (
+              <div className="grid md:grid-cols-2">
+                {/* Content */}
+                <div className="bg-white px-8 sm:px-12 py-12 sm:py-16 flex flex-col justify-center order-2 md:order-1">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-10 h-10 rounded-lg bg-black flex items-center justify-center border border-black">
+                      <CheckCircle2 size={18} className="text-white" />
+                    </div>
+
+                    <h2 className="text-sm font-semibold tracking-[0.18em] uppercase text-black/45">
+                      Objectives & Goals
+                    </h2>
+                  </div>
+
+                  <p className="text-2xl sm:text-3xl font-semibold tracking-tight text-black leading-tight mb-6 max-w-xl">
+                    Clear goals that shaped the final direction.
+                  </p>
+
+                  <ul className="space-y-4 max-w-xl">
+                    {work.goals.map((goal, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <CheckCircle2
+                          size={18}
+                          className="text-black mt-1 shrink-0"
+                        />
+                        <span className="text-base sm:text-lg text-black/65 leading-relaxed">
+                          {goal}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Image */}
+                <div className="relative min-h-[280px] sm:min-h-[360px] border-l border-black/10 order-1 md:order-2">
+                  {/* <Image
+                    src="/images/projects/solution.svg"
+                    alt="Objectives and goals visual"
+                    fill
+                    className="object-contain"
+                  /> */}
+                </div>
+              </div>
+            )}
+          </section>
+        )}
+
+
+
+        {(work.competitors?.length || work.features?.length) && (
+          <section className="mb-28 border-y border-black/10">
+
+            {/* Competitor Analysis */}
+            {work.competitors?.length && (
+              <div className="grid md:grid-cols-2 border-b border-black/10">
+
+
+                {/* RIGHT IMAGE */}
+                <div className="relative min-h-[280px] sm:min-h-[360px]  border-r border-black/10">
+                  {/* <Image
+                    src="/images/projects/compitetor.svg"
+                    alt="Objectives and goals visual"
+                    fill
+                    className="object-contain"
+                  /> */}
+                </div>
+                {/* LEFT TEXT */}
+                <div className="bg-white px-8 sm:px-12 py-12 sm:py-16 flex flex-col justify-center">
+
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-10 h-10 rounded-lg bg-black flex items-center justify-center border border-black">
+                      <Gauge size={18} className="text-white" />
+                    </div>
+
+                    <h2 className="text-sm font-semibold tracking-[0.18em] uppercase text-black/45">
+                      Competitor Analysis
+                    </h2>
+                  </div>
+
+                  <div className="space-y-6 max-w-xl">
+                    {work.competitors.map((c, i) => (
+                      <div key={i}>
+                        <h3 className="text-lg font-semibold text-black mb-1">
+                          {c.name}
+                        </h3>
+
+                        <p className="text-black/60 leading-relaxed">
+                          {c.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                </div>
+
+              </div>
+            )}
+
+            {/* Unique Features */}
+            {work.features?.length && (
+              <div className="grid md:grid-cols-2">
+
+                {/* LEFT TEXT */}
+                <div className="bg-white px-8 sm:px-12 py-12 sm:py-16 flex flex-col justify-center">
+
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-10 h-10 rounded-lg bg-black flex items-center justify-center border border-black">
+                      <Briefcase size={18} className="text-white" />
+                    </div>
+
+                    <h2 className="text-sm font-semibold tracking-[0.18em] uppercase text-black/45">
+                      Unique Features
+                    </h2>
+                  </div>
+
+                  <div className="space-y-6 max-w-xl">
+                    {work.features.map((feature, i) => (
+                      <div key={i}>
+                        <h3 className="text-lg font-semibold text-black mb-1">
+                          {feature.title}
+                        </h3>
+
+                        <p className="text-black/60 leading-relaxed">
+                          {feature.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                </div>
+
+                {/* RIGHT IMAGE */}
+                <div className="relative min-h-[280px] sm:min-h-[360px]  border-l border-black/10">
+                  {/* <Image
+                    src="/images/projects/compitetor.svg"
+                    alt="Objectives and goals visual"
+                    fill
+                    className="object-contain"
+                  /> */}
+                </div>
+
+              </div>
+            )}
+
+          </section>
+        )}
+
+
+
+        {/* Business Challenges */}
+        {work.businessChallenges?.length ? (
+          <section className="mb-28">
+
+            <div className="">
+
+              {/* Section label */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-10 h-10 rounded-lg bg-black flex items-center justify-center border border-black">
+                  <Briefcase size={18} className="text-white" />
+                </div>
+
+                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-black/50">
+                  Business Challenges
+                </span>
+              </div>
+
+              {/* Big heading */}
+              <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-black leading-tight mb-10">
+                Key business challenges that shaped the product strategy and design decisions.
+              </h2>
+
+              {/* List */}
+              <ul className="space-y-5">
+
+                {work.businessChallenges.map((c, i) => (
+                  <li key={i} className="flex items-start gap-4">
+
+                    <span className="mt-2 w-2 h-2 rounded-full bg-black/40 shrink-0" />
+
+                    <p className="text-lg text-black/70 leading-relaxed">
+                      {c}
+                    </p>
+
+                  </li>
+                ))}
+
+              </ul>
+
+            </div>
+
+          </section>
+        ) : null}
+
+
+        {work.persona ? (
+          <section className="mb-28">
+
+            <div className="max-w-5xl mx-auto">
+
+              {/* Section Header */}
+              <div className="flex items-center gap-4 mb-12">
+                <div className="w-10 h-10 rounded-lg bg-green-500 flex items-center justify-center border border-green-600">
+                  <UserRoundCheck size={18} className="text-white" />
+                </div>
+
+                <span className="text-sm font-semibold tracking-[0.18em] uppercase text-black/45">
+                  User Persona
+                </span>
+              </div>
+
+              {/* Persona Container */}
+              <div className="border border-black/10 rounded-2xl p-10">
+
+                {/* Profile */}
+                <div className="flex items-center gap-6 mb-10">
+
+                  <Image
+                    src={work.persona.image}
+                    alt={work.persona.name}
+                    width={50}
+                    height={50}
+                    className="rounded-full"
+                  />
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-black">
+                      {work.persona.name}
+                    </h3>
+
+                    <p className="text-black/60">
+                      {work.persona.role}
+                    </p>
+
+                    {(work.persona.age || work.persona.location) && (
+                      <p className="text-sm text-black/50 mt-1">
+                        {work.persona.age} • {work.persona.location}
+                      </p>
+                    )}
+                  </div>
+
+                </div>
+
+                {/* About */}
+                {work.persona.about && (
+                  <p className="text-lg text-black/70 leading-relaxed mb-10 max-w-3xl">
+                    {work.persona.about}
+                  </p>
+                )}
+
+                {/* Goals & Pain Points */}
+                <div className="grid md:grid-cols-2 gap-12">
+
+                  {/* Goals */}
+                  <div>
+                    <h4 className="text-sm font-semibold uppercase tracking-[0.15em] text-black/50 mb-5">
+                      Goals
+                    </h4>
+
+                    <ul className="space-y-4">
+                      {work.persona.goals.map((g, i) => (
+                        <li key={i} className="flex gap-3 items-start">
+                          <span className="mt-2 w-2 h-2 rounded-full bg-black/40"></span>
+                          <p className="text-black/70 leading-relaxed">{g}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Pain Points */}
+                  <div>
+                    <h4 className="text-sm font-semibold uppercase tracking-[0.15em] text-black/50 mb-5">
+                      Pain Points
+                    </h4>
+
+                    <ul className="space-y-4">
+                      {work.persona.pains.map((p, i) => (
+                        <li key={i} className="flex gap-3 items-start">
+                          <span className="mt-2 w-2 h-2 rounded-full bg-black/40"></span>
+                          <p className="text-black/70 leading-relaxed">{p}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </section>
+        ) : null}
+
+        <ProcessSectionHover process={work.process || []} />
+
+
+
+        {/* Major Screens */}
+        {work.screens?.length ? (
+          <section className="mb-24">
+            <div className="flex items-center gap-4 mb-10">
+              <div className="w-10 h-10 rounded-lg bg-black flex items-center justify-center border border-black">
+                <Gauge size={18} className="text-white" />
+              </div>
+
+              <h2 className="text-sm font-semibold tracking-[0.2em] uppercase text-black/50">
+                Major Screens
+              </h2>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-8">
+              {work.screens.map((screen, i) => (
+                <div key={i} className="space-y-4">
+                  <div className="relative h-[400px] rounded-xl overflow-hidden border border-black/10">
+                    <Image src={screen.image} alt="" fill className="object-contain object-top" />
+                  </div>
+
+                  <h3 className="font-semibold text-black">{screen.title}</h3>
+                  <p className="text-sm text-black/60">{screen.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+
+
+
+
+
+
 
         {/* Challenge & Solution - two column on desktop */}
         <div className="grid sm:grid-cols-2 gap-10 sm:gap-12 mb-16">
