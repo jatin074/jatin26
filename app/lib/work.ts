@@ -209,7 +209,7 @@ export const WORKS: WorkItem[] = [
         title: "Difference Analysis View",
         description:
           "Detailed comparison interface highlighting field-level differences between employee records across systems.",
-         image: "/images/screens/p1s3.png",
+        image: "/images/screens/p1s3.png",
       },
       {
         title: "Synchronization Management",
@@ -260,7 +260,6 @@ export const WORKS: WorkItem[] = [
 
     tech: [
       "Figma",
-      "Next.js",
       "React.js",
       "Tailwind CSS",
       "Framer Motion",
@@ -441,6 +440,7 @@ export const WORKS: WorkItem[] = [
 
     tech: [
       "Figma",
+      "React Js",
       "Design System",
       "Landing Page UX",
       "Responsive Layout",
@@ -554,36 +554,24 @@ export const WORKS: WorkItem[] = [
       },
     ],
 
-    sketches: [
-      "/images/projects/camelab/sketch1.png",
-      "/images/projects/camelab/sketch2.png",
-      "/images/projects/camelab/sketch3.png",
-    ],
-
     screens: [
       {
         title: "Landing Hero Section",
         description:
           "Hero section introducing the platform's value proposition for creators and brands.",
-        image: "/images/projects/camelab/screen-hero.png",
+        image: "/images/screens/p3s1.webp",
       },
       {
         title: "Creator Earnings Flow",
         description:
           "Section explaining how creators earn through affiliate marketing and brand collaborations.",
-        image: "/images/projects/camelab/screen-earnings.png",
-      },
-      {
-        title: "Brand Collaboration Process",
-        description:
-          "Workflow explaining how brands can discover and collaborate with creators.",
-        image: "/images/projects/camelab/screen-collaboration.png",
+        image: "/images/screens/p3s2.webp",
       },
       {
         title: "Creator Showcase",
         description:
           "Section highlighting successful creators and example content collaborations.",
-        image: "/images/projects/camelab/screen-creators.png",
+        image: "/images/screens/p3s3.webp",
       },
     ],
   },
@@ -704,7 +692,7 @@ export const WORKS: WorkItem[] = [
     persona: {
       name: "Rahul Patel",
       role: "Mechanical Engineering Student",
-      image: "/images/persona/student.png",
+      image: "/images/projects/pic.svg",
 
       goals: [
         "Learn AutoCAD and CAM tools for career advancement",
@@ -753,25 +741,25 @@ export const WORKS: WorkItem[] = [
         title: "Homepage",
         description:
           "Homepage introducing the platform's core offerings including technical training and software services.",
-        image: "/images/projects/prabhim/screen-home.png"
+        image: "/images/screens/p4s1.webp"
       },
       {
         title: "Course Listing Page",
         description:
           "Page displaying available technical courses with key details and enrollment options.",
-        image: "/images/projects/prabhim/screen-courses.png"
+        image: "/images/screens/p4s2.webp"
       },
       {
         title: "Service Detail Page",
         description:
           "Dedicated page explaining custom software solutions and technical consulting services.",
-        image: "/images/projects/prabhim/screen-service.png"
+        image: "/images/screens/p4s3.webp"
       },
       {
         title: "Blog & Knowledge Section",
         description:
           "Educational blog section supporting SEO and sharing technical insights related to CAD and software tools.",
-        image: "/images/projects/prabhim/screen-blog.png"
+        image: "/images/screens/p4s4.webp"
       }
     ]
   },
@@ -822,7 +810,6 @@ export const WORKS: WorkItem[] = [
 
     tech: [
       "Next.js",
-      "React",
       "Tailwind CSS",
       "Framer Motion",
       "3D Modal Interaction",
@@ -893,7 +880,7 @@ export const WORKS: WorkItem[] = [
     persona: {
       name: "Anjali Mehta",
       role: "Home Chef & Cooking Enthusiast",
-      image: "/images/persona/home-chef.png",
+      image: "/images/projects/pic.svg",
 
       goals: [
         "Discover authentic Indian spice products",
@@ -931,36 +918,30 @@ export const WORKS: WorkItem[] = [
       },
     ],
 
-    sketches: [
-      "/images/projects/harishree/sketch1.png",
-      "/images/projects/harishree/sketch2.png",
-      "/images/projects/harishree/sketch3.png",
-    ],
-
     screens: [
       {
         title: "Hero Experience",
         description:
           "Homepage hero introducing the brand with vibrant spice visuals and animated motion elements.",
-        image: "/images/projects/harishree/screen-hero.png",
+        image: "/images/screens/p5s1.webp",
       },
       {
         title: "Product Showcase",
         description:
           "Structured product section highlighting spice categories and brand storytelling.",
-        image: "/images/projects/harishree/screen-products.png",
+        image: "/images/screens/p5s2.webp",
       },
       {
         title: "3D Product Interaction",
         description:
           "Interactive modal allowing users to rotate spice packaging and view details dynamically.",
-        image: "/images/projects/harishree/screen-3d.png",
+        image: "/images/screens/p5s3.webp",
       },
       {
         title: "Brand Story Section",
         description:
           "Section explaining the heritage, authenticity, and quality of the Harishree Masala brand.",
-        image: "/images/projects/harishree/screen-brand.png",
+        image: "/images/screens/p5s4.webp",
       },
     ],
   },
@@ -1012,6 +993,7 @@ export const WORKS: WorkItem[] = [
 
     tech: [
       "Figma",
+      "React Js",
       "User Research",
       "Persona Development",
       "Responsive UI Design",
@@ -1082,7 +1064,7 @@ export const WORKS: WorkItem[] = [
     persona: {
       name: "Daniel Park",
       role: "Web3 Platform User",
-      image: "/images/persona/web3-user.png",
+      image: "/images/projects/pic.svg",
 
       goals: [
         "Verify identity quickly and securely",
@@ -1120,36 +1102,36 @@ export const WORKS: WorkItem[] = [
       },
     ],
 
-    sketches: [
-      "/images/projects/yomoken-dashboard/sketch1.png",
-      "/images/projects/yomoken-dashboard/sketch2.png",
-      "/images/projects/yomoken-dashboard/sketch3.png",
-    ],
-
     screens: [
+      {
+        title: "Login & Registration",
+        description:
+          "Clean blue authentication interface designed to build trust. Includes login, registration, and animated trust indicators highlighting security, privacy, and fast verification.",
+        image: "/images/screens/p6s1.webp",
+      },
       {
         title: "Verification Dashboard",
         description:
-          "Main dashboard displaying verification status, progress indicators, and credential overview.",
-        image: "/images/projects/yomoken-dashboard/screen-dashboard.png",
+          "Calm and minimal dashboard presenting verification status, progress overview, and key identity features. Designed to give users quick visibility into their verification progress.",
+        image: "/images/screens/p6s2.webp",
       },
       {
-        title: "Verification Flow",
+        title: "Verification Process",
         description:
-          "Guided multi-step verification interface with document uploads and contextual instructions.",
-        image: "/images/projects/yomoken-dashboard/screen-verification.png",
+          "Simple step-by-step verification flow guiding users through identity submission, document upload, and validation with clear instructions and minimal friction.",
+        image: "/images/screens/p6s3.webp",
       },
       {
-        title: "Credential Management",
+        title: "Verification Result",
         description:
-          "Interface allowing users to view and manage verified identity credentials.",
-        image: "/images/projects/yomoken-dashboard/screen-credentials.png",
+          "Outcome interface showing both successful and unsuccessful verification states with clear feedback, next steps, and helpful guidance for retrying if verification fails.",
+        image: "/images/screens/p6s4.webp",
       },
       {
-        title: "Verification Success State",
+        title: "The Loader Experience",
         description:
-          "Feedback interface confirming successful verification and next steps for the user.",
-        image: "/images/projects/yomoken-dashboard/screen-success.png",
+          "An engaging loading experience designed to keep users informed and engaged while their verification is securely processed. The creative loader animation reassures users that the system is actively working and prevents drop-off during wait time.",
+        image: "/images/screens/p6s5.png",
       },
     ],
   }
