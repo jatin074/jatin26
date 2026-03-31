@@ -68,7 +68,7 @@ export default function WhyMeSection() {
                   className="group relative overflow-hidden bg-[#f5f5f5] border border-black/5 rounded-2xl p-8 sm:h-[280px] flex flex-col justify-between transition-all duration-500 hover:bg-black hover:-translate-y-2"
                 >
                   {/* Faded Background Number */}
-                  <span className="absolute -top-6 -right-4 text-[70px] font-normal text-slate-300/40 select-none pointer-events-none transition duration-500">
+                  <span className="absolute -top-6 -right-4 text-[70px] opacity-70 font-normal text-slate-300/40 select-none pointer-events-none transition duration-500">
                     {stat.number}
                   </span>
 

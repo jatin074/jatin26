@@ -4,19 +4,26 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { WORKS } from "@/app/lib/work";
+import SectionHeading from "../ui/SectionHeading";
 
 export default function WorkSection() {
   return (
     <section className="bg-white">
       <div className="container-sm">
+
         {/* Section Heading */}
-        <div className="mb-16 sm:mb-20 text-center">
-          <p className="sectionlabel">Portfolio</p>
+        <div className="mb-10 sm:mb-20">
+          <SectionHeading
+            label="Portfolio"
+            heading="Selected Work"
+            subheading="A collection of product-focused projects where design systems, frontend architecture, and performance-driven thinking come together."
+          />
+          {/* <p className="sectionlabel">Portfolio</p>
           <h2 className="heading-dark">Selected Work</h2>
           <p className="mt-5 text-black/60 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
             A collection of product-focused projects where design systems,
             frontend architecture, and performance-driven thinking come together.
-          </p>
+          </p> */}
         </div>
 
         {/* Grid - same on all screen sizes (stacked on mobile, bento on desktop) */}
@@ -47,9 +54,8 @@ function WorkCard({ work }: { work: (typeof WORKS)[0] }) {
     >
       {/* Image container */}
       <div
-        className={`relative bg-black/5 shrink-0 ${
-          isFeatured ? "aspect-[16/10] sm:aspect-[16/9]" : "aspect-[4/3]"
-        }`}
+        className={`relative bg-black/5 shrink-0 ${isFeatured ? "aspect-[16/10] sm:aspect-[16/9]" : "aspect-[4/3]"
+          }`}
       >
         <Image
           src={work.image}
@@ -88,17 +94,15 @@ function WorkCard({ work }: { work: (typeof WORKS)[0] }) {
         </div>
 
         <h3
-          className={`font-semibold text-black tracking-tight group-hover:text-black/90 transition-colors ${
-            isFeatured ? "text-xl sm:text-2xl mb-2" : "text-lg mb-1.5"
-          }`}
+          className={`font-semibold text-black tracking-tight group-hover:text-black/90 transition-colors ${isFeatured ? "text-xl sm:text-2xl mb-2" : "text-lg mb-1.5"
+            }`}
         >
           {work.title}
         </h3>
 
         <p
-          className={`text-black/60 leading-relaxed flex-1 ${
-            isFeatured ? "text-base sm:text-lg mb-4" : "text-sm mb-3"
-          }`}
+          className={`text-black/60 leading-relaxed flex-1 ${isFeatured ? "text-base sm:text-lg mb-4" : "text-sm mb-3"
+            }`}
         >
           {work.description}
         </p>

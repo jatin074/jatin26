@@ -22,11 +22,12 @@ export default function SectionHeading({
             >
                 {/* LEFT */}
                 <div className="lg:col-span-5 2xl:col-span-6">
-                    <p className="sectionlabel">
+                    <p className={`sectionlabel ${dark ? "text-white/40!" : ""
+                        }`}>
                         {label}
                     </p>
                     <h2
-                        className={`heading-dark lg:max-w-md 2xl:max-w-lg ${dark ? "text-white" : ""
+                        className={`heading-dark lg:max-w-md 2xl:max-w-lg ${dark ? "text-white!" : ""
                             }`}
                     >
                         {heading}
@@ -36,7 +37,7 @@ export default function SectionHeading({
                 {/* RIGHT */}
                 <div className="lg:col-span-7 2xl:col-span-6">
                     <p
-                        className={`subheading-dark ${dark ? "text-slate-300" : ""
+                        className={`subheading-dark ${dark ? "text-slate-300!" : ""
                             }`}
                     >
                         {subheading}

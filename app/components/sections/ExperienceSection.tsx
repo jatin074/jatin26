@@ -1,6 +1,7 @@
 "use client";
 
 import { GraduationCap, Briefcase, ArrowRight } from "lucide-react";
+import SectionHeading from "../ui/SectionHeading";
 
 export default function ExperienceSection() {
   return (
@@ -18,8 +19,15 @@ export default function ExperienceSection() {
       />
 
       <div className="container-sm relative z-10">
+        <SectionHeading
+          dark
+          label=" Career & Learning"
+          heading="My Journey"
+          subheading="From engineering foundations to product design and frontend systems
+            building meaningful digital experiences with purpose and precision."
+        />
         {/* Section Heading */}
-        <div className="text-center mb-16 sm:mb-20">
+        {/* <div className="text-center mb-16 sm:mb-20">
           <p className="sectionlabel text-white/50!">
             Career & Learning
           </p>
@@ -30,10 +38,10 @@ export default function ExperienceSection() {
             From engineering foundations to product design and frontend systems
             building meaningful digital experiences with purpose and precision.
           </p>
-        </div>
+        </div> */}
 
         {/* Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 mt-10 sm:mt-20">
           {/* EDUCATION COLUMN */}
           <div className="relative">
             <div className="absolute left-[22px] top-[50px] bottom-2 w-0.5 bg-white/20" />

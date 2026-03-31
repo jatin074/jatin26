@@ -317,3 +317,21 @@ html {
 .animate-fade-in-nav {
   animation: fade-in-nav 0.4s ease-out forwards;
 }
+
+.ai-rotate {
+  animation: aiRotate 40s linear infinite;
+}
+
+@keyframes aiRotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.04);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}

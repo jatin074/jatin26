@@ -7,6 +7,7 @@ import {
   ArrowUpRight,
   ExternalLink,
 } from "lucide-react";
+import SectionHeading from "../ui/SectionHeading";
 
 const contactItems = [
   {
@@ -40,7 +41,14 @@ export default function ContactSection() {
     <section>
       <div className="container-sm">
         {/* Heading */}
-        <div className="text-center mb-16 sm:mb-24">
+        <div className="mb-10 sm:mb-20">
+          <SectionHeading
+            label="Get in Touch"
+            heading="Let&apos;s Build Together"
+            subheading="Open to collaborations, product discussions, and new opportunities. Let&apos;s connect and create scalable digital experiences."
+          />
+        </div>
+        {/* <div className="text-center mb-16 sm:mb-24">
           <p className="text-sm font-medium tracking-[0.25em] uppercase text-black/50 mb-4">
             Get in Touch
           </p>
@@ -51,7 +59,7 @@ export default function ContactSection() {
             Open to collaborations, product discussions, and new opportunities.
             Let&apos;s connect and create scalable digital experiences.
           </p>
-        </div>
+        </div> */}
 
         {/* Main layout - 2/3 contact cards + 1/3 CTA */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
