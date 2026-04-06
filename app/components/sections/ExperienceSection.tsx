@@ -93,7 +93,7 @@ export default function ExperienceSection() {
             <div className="space-y-6">
               <ExperienceCard
                 title="CloseDigit LLP"
-                subtitle="Frontend Developer"
+                subtitle="Software Engineer"
                 period="2023 — 2025"
                 isPresent={false}
                 accent="work"
