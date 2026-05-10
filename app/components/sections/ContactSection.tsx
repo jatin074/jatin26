@@ -3,9 +3,9 @@
 import {
   Phone,
   Mail,
-  MapPin,
   ArrowUpRight,
   ExternalLink,
+  Download,
 } from "lucide-react";
 import SectionHeading from "../ui/SectionHeading";
 
@@ -27,12 +27,14 @@ const contactItems = [
     iconColor: "text-blue-600",
   },
   {
-    icon: MapPin,
-    label: "Location",
-    value: "Ahmedabad Gujarat, India",
-    href: "https://maps.google.com/?q=Ahmedabad,Gujarat,India",
+    icon: Download,
+    label: "Download Resume",
+    value:
+      "Download my latest resume including product experience.",
+    href: "/JT-Product Designer.pdf",
     accent: "from-emerald-500/15 to-teal-500/15 border-emerald-500/20",
     iconColor: "text-emerald-600",
+    download: true,
   },
 ];
 
@@ -71,29 +73,51 @@ export default function ContactSection() {
                 <a
                   key={item.label}
                   href={item.href}
-                  target={item.href.startsWith("http") ? "_blank" : undefined}
-                  rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className={`
-                    group relative flex flex-col rounded-2xl p-6 sm:p-7
-                    bg-white border border-black/8
-                    transition-all duration-400 ease-out
-                    hover:border-black/15 hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.1)]
-                    hover:-translate-y-1
-                  `}
+                  download={item.download}
+                  target={
+                    item.href.startsWith("http") ? "_blank" : undefined
+                  }
+                  rel={
+                    item.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  className="
+                  group relative flex flex-col rounded-2xl p-6 sm:p-7
+                  bg-white border border-black/8
+                  transition-all duration-400 ease-out
+                  hover:border-black/15 hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.1)]
+                  hover:-translate-y-1
+                "
                 >
                   <div
                     className={`mb-5 w-12 h-12 rounded-xl flex items-center justify-center border bg-gradient-to-br ${item.accent} group-hover:shadow-md transition-all duration-300`}
                   >
-                    <Icon size={22} className={`${item.iconColor}`} strokeWidth={1.5} />
+                    <Icon
+                      size={22}
+                      className={item.iconColor}
+                      strokeWidth={1.5}
+                    />
                   </div>
+
                   <p className="text-xs font-semibold tracking-wider uppercase text-black/50 mb-1.5">
                     {item.label}
                   </p>
-                  <p className={`font-medium text-black ${item.label === "Email" ? "break-all text-sm sm:text-base" : "text-base"}`}>
+
+                  <p
+                    className={`font-medium text-black ${item.label === "Email"
+                        ? "break-all text-sm sm:text-base"
+                        : "text-sm sm:text-base"
+                      }`}
+                  >
                     {item.value}
                   </p>
+
                   <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-black/50 group-hover:text-black group-hover:gap-2 transition-all">
-                    Reach out
+                    {item.label === "Download Resume"
+                      ? "Download Now"
+                      : "Reach out"}
+
                     <ArrowUpRight size={16} strokeWidth={2} />
                   </span>
                 </a>

@@ -109,7 +109,7 @@ export default function MyDesignSection() {
   const active = DESIGN_LINKS[Math.min(activeIndex, DESIGN_LINKS.length - 1)];
 
   return (
-    <section className="bg-white py-14 sm:py-20">
+    <section id="design" className="bg-white py-14 sm:py-20">
       <div className="container-sm">
         {/* Header */}
         <div className="mb-10 sm:mb-20">

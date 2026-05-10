@@ -1,7 +1,18 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Calendar, Briefcase, CheckCircle2, Gauge, UserRoundCheck } from "lucide-react";
+import {
+  ArrowLeft,
+  Calendar,
+  Briefcase,
+  CheckCircle2,
+  Gauge,
+  UserRoundCheck,
+  ClipboardList,
+  Target,
+  FlaskConical,
+  TestTube2,
+} from "lucide-react";
 import { getWorkBySlug, getAllWorkSlugs } from "@/app/lib/work";
 import Button from "@/app/components/ui/Button";
 import { ProcessSectionHover } from "@/app/components/ui/ProcessSectionHover";
@@ -90,7 +101,7 @@ export default async function WorkDetailPage({ params }: Props) {
 
         {/* Cover Media (Image or Behance Embed) */}
         <div className="relative rounded-2xl overflow-hidden border border-black/8 mb-16 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] bg-white">
-          <div className="aspect-[16/10] sm:aspect-[16/9] bg-black/5">
+          <div className="aspect-16/10 sm:aspect-video bg-black/5">
             {work.behanceEmbed ? (
               <iframe
                 src={work.behanceEmbed}
@@ -123,10 +134,118 @@ export default async function WorkDetailPage({ params }: Props) {
           </p>
         </section>
 
-        <div className="">
-          <CaseStudyCards work={work} />
-        </div>
-  
+        <CaseStudyCards work={work} />
+
+        {/* User needs + responsibilities — scope of impact */}
+        {(work.userNeeds?.length || work.responsibilities?.length) ? (
+          <section className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-24">
+            {work.userNeeds?.length ? (
+              <div className="rounded-2xl border border-black/10 bg-black/2 p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center">
+                    <Target size={18} className="text-white" />
+                  </div>
+                  <h2 className="text-sm font-semibold tracking-[0.18em] uppercase text-black/50">
+                    User & business needs
+                  </h2>
+                </div>
+                <ul className="space-y-4">
+                  {work.userNeeds.map((n, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-emerald-500/80" />
+                      <span className="text-black/75 leading-relaxed">{n}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div />
+            )}
+            {work.responsibilities?.length ? (
+              <div className="rounded-2xl border border-black/10 bg-white p-6 sm:p-8 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.08)]">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center">
+                    <ClipboardList size={18} className="text-white" />
+                  </div>
+                  <h2 className="text-sm font-semibold tracking-[0.18em] uppercase text-black/50">
+                    My role & responsibilities
+                  </h2>
+                </div>
+                <ul className="space-y-4">
+                  {work.responsibilities.map((r, i) => (
+                    <li key={i} className="flex gap-3">
+                      <CheckCircle2 className="shrink-0 mt-0.5 text-black/35" size={18} strokeWidth={2} />
+                      <span className="text-black/75 leading-relaxed">{r}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div />
+            )}
+          </section>
+        ) : null}
+
+        {/* Research + testing */}
+        {(work.researchMethods?.length || work.testingMethods?.length) ? (
+          <section className="mb-24">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center">
+                <FlaskConical size={18} className="text-white" />
+              </div>
+              <h2 className="text-sm font-semibold tracking-[0.18em] uppercase text-black/50">
+                Research & validation
+              </h2>
+            </div>
+            <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
+              {work.researchMethods?.length ? (
+                <div className="rounded-2xl border border-black/10 p-6 sm:p-8">
+                  <h3 className="text-lg font-semibold text-black mb-6 flex items-center gap-2">
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-black text-white text-xs font-bold">
+                      R
+                    </span>
+                    How I researched
+                  </h3>
+                  <ul className="space-y-6">
+                    {work.researchMethods.map((m, i) => (
+                      <li key={i}>
+                        <p className="font-semibold text-black">{m.title}</p>
+                        <p className="mt-2 text-black/65 leading-relaxed text-sm sm:text-base">
+                          {m.description}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+              {work.testingMethods?.length ? (
+                <div className="rounded-2xl border border-black/10 p-6 sm:p-8 bg-linear-to-b from-white to-black/2">
+                  <h3 className="text-lg font-semibold text-black mb-6 flex items-center gap-2">
+                    <TestTube2 size={20} className="text-black" strokeWidth={2} />
+                    Testing & what I learned
+                  </h3>
+                  <ul className="space-y-6">
+                    {work.testingMethods.map((t, i) => (
+                      <li key={i} className="border-l-2 border-black/15 pl-4">
+                        <p className="font-semibold text-black">{t.title}</p>
+                        <p className="mt-2 text-black/65 leading-relaxed text-sm sm:text-base">
+                          {t.description}
+                        </p>
+                        {t.findings ? (
+                          <p className="mt-3 text-sm text-black/80 leading-relaxed">
+                            <span className="font-semibold text-black/90">Outcome: </span>
+                            {t.findings}
+                          </p>
+                        ) : null}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
+          </section>
+        ) : null}
+
         {/* Business Challenges */}
         {work.businessChallenges?.length ? (
           <section className="mb-28">
@@ -348,6 +467,45 @@ export default async function WorkDetailPage({ params }: Props) {
             ))}
           </ul>
         </section>
+
+        {/* Outcomes & reflection */}
+        {(work.outcomes?.length || work.lessonsLearned?.length) ? (
+          <section className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-16">
+            {work.outcomes?.length ? (
+              <div className="rounded-2xl border border-black/10 bg-black text-white p-6 sm:p-8">
+                <h2 className="text-sm font-semibold tracking-[0.18em] uppercase text-white/55 mb-6">
+                  Impact & outcomes
+                </h2>
+                <ul className="space-y-4">
+                  {work.outcomes.map((o, i) => (
+                    <li key={i} className="flex gap-3 text-white/85 leading-relaxed">
+                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-white/50" />
+                      {o}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div />
+            )}
+            {work.lessonsLearned?.length ? (
+              <div className="rounded-2xl border border-black/10 p-6 sm:p-8">
+                <h2 className="text-sm font-semibold tracking-[0.18em] uppercase text-black/50 mb-6">
+                  Lessons learned
+                </h2>
+                <ul className="space-y-4">
+                  {work.lessonsLearned.map((l, i) => (
+                    <li key={i} className="text-black/75 leading-relaxed pl-4 border-l-2 border-black/10">
+                      {l}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div />
+            )}
+          </section>
+        ) : null}
 
         {/* Tech stack */}
         <section className="mb-16">

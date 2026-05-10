@@ -35,6 +35,18 @@ export type WorkItem = {
   process?: { title: string; description: string }[];
   sketches?: string[];
   screens?: { title: string; description: string; image: string }[];
+  /** What you owned end-to-end — helps employers scope your impact */
+  responsibilities?: string[];
+  /** Explicit user / business needs distilled from research */
+  userNeeds?: string[];
+  /** How you researched: competitive analysis, interviews, heuristics, etc. */
+  researchMethods?: { title: string; description: string }[];
+  /** Usability testing, UAT, QA checks, analytics — what you validated and how */
+  testingMethods?: { title: string; description: string; findings?: string }[];
+  /** Results: adoption, error reduction, cycle time, qualitative wins */
+  outcomes?: string[];
+  /** Honest reflection recruiters like */
+  lessonsLearned?: string[];
 };
 
 export const WORKS: WorkItem[] = [
@@ -218,6 +230,73 @@ export const WORKS: WorkItem[] = [
         image: "/images/screens/p1s4.png",
       },
     ],
+
+    responsibilities: [
+      "Led UX discovery with HR admins and integration owners; synthesized workflows into IA and dashboard journeys.",
+      "Designed field-level difference views, sync status dashboards, audit affordances, and admin permission patterns.",
+      "Partnered with engineering on realistic states: empty data, conflicts, retries, API failures, and partial sync.",
+      "Documented UX specs and edge-case behavior for QA and UAT scenarios.",
+    ],
+
+    userNeeds: [
+      "Single place to see which employee records mismatch across payroll, HRIS, and time systems.",
+      "Confidence that syncing will not silently corrupt payroll-critical fields.",
+      "Fast reconciliation with clear remediation steps instead of spreadsheets.",
+      "Evidence for auditors: what changed, when, and who approved.",
+    ],
+
+    researchMethods: [
+      {
+        title: "Stakeholder interviews & journey mapping",
+        description:
+          "Walked HR ops and IT through weekly reconciliation rituals; mapped disconnects between tools and escalation paths.",
+      },
+      {
+        title: "Competitive / analog analysis",
+        description:
+          "Compared enterprise HR suites and lighter iPaaS patterns to avoid copying complexity while matching admin mental models.",
+      },
+      {
+        title: "Heuristic review of dense data UIs",
+        description:
+          "Audited readability of diff tables, filter patterns, bulk actions, and error surfacing against enterprise SaaS standards.",
+      },
+    ],
+
+    testingMethods: [
+      {
+        title: "Task-based usability walkthroughs",
+        description:
+          "Admins completed “find mismatch → explain impact → resolve” tasks on mid-fidelity prototypes.",
+        findings:
+          "Users needed field-level grouping and a persistent “source of truth” indicator per attribute.",
+      },
+      {
+        title: "Scenario testing with engineering",
+        description:
+          "Validated conflict resolution flows for bidirectional sync, locked fields, and rollback edge cases.",
+        findings:
+          "Surfacing “blocking vs warning” severities reduced false escalations in dry runs.",
+      },
+      {
+        title: "UAT scripts with pilot HR teams",
+        description:
+          "Structured scripts around payroll month-end and new-hire spikes; logged time-to-triage and error rates.",
+        findings:
+          "Average triage time dropped when diff summary cards appeared above raw tables.",
+      },
+    ],
+
+    outcomes: [
+      "Turned an ambiguous “data sync” problem into a governed workflow: map → diff → review → apply → audit.",
+      "Reduced cognitive load for admins by prioritizing severity, system source, and last-sync context in one view.",
+      "Created a scalable pattern for adding new connectors without redesigning the core dashboard.",
+    ],
+
+    lessonsLearned: [
+      "Enterprise trust is won through transparent error handling and recoverability, not only pretty dashboards.",
+      "Diff UIs must encode business rules (e.g., payroll-locked fields) visibly or admins won’t adopt them.",
+    ],
   },
   {
     slug: "web3-identity-platform",
@@ -392,6 +471,73 @@ export const WORKS: WorkItem[] = [
           "Structured footer design guiding users to explore the product further.",
         image: "/images/screens/p2s4.png",
       },
+    ],
+
+    responsibilities: [
+      "Owned UX narrative, visual design, interaction patterns, and production frontend implementation (Next.js + Tailwind).",
+      "Ran lightweight research to validate comprehension of Web3/KYC messaging with crypto-curious audiences.",
+      "Built responsive layouts, hover micro-interactions, and performance-conscious animation.",
+      "Collaborated with stakeholders to balance marketing goals with honest, non-hand-wavy explanations.",
+    ],
+
+    userNeeds: [
+      "Understand why current KYC feels broken — without jargon walls.",
+      "Feel legitimacy and security cues before trusting a newer identity stack.",
+      "Scan quickly on mobile; deepen on desktop.",
+      "Clear next step toward product exploration or contact.",
+    ],
+
+    researchMethods: [
+      {
+        title: "Message testing with 1:1 sessions",
+        description:
+          "Quick sessions with prospective users to reveal which metaphors landed (privacy, control, reuse) versus which felt gimmicky.",
+      },
+      {
+        title: "Competitive landing teardowns",
+        description:
+          "Compared Web3 identity and fintech onboarding pages for hierarchy, proof points, and CTA placement.",
+      },
+      {
+        title: "Content layering review",
+        description:
+          "Structured the page as progressive disclosure: pain → mechanism → proof → CTA to avoid cognitive overload.",
+      },
+    ],
+
+    testingMethods: [
+      {
+        title: "5-second comprehension checks",
+        description:
+          "First-view tests to ensure visitors could name the problem space and one product promise.",
+        findings:
+          "Problem-first hero outperformed feature-first; users needed the “why” before “how.”",
+      },
+      {
+        title: "Prototype click tests on interactive chips",
+        description:
+          "Observed discoverability and delight without hiding critical copy on mobile.",
+        findings:
+          "Added persistent summary lines under chips for touch users who don’t hover.",
+      },
+      {
+        title: "Performance & accessibility spot checks",
+        description:
+          "Lighthouse passes, contrast checks on blue/white system, reduced motion respect.",
+        findings:
+          "Kept animation subtle to protect LCP and respect vestibular sensitivity.",
+      },
+    ],
+
+    outcomes: [
+      "Established a repeatable storytelling pattern for complex Web3 products: education before technology flex.",
+      "Shipped a fast, responsive landing that supports both trust (visual system) and clarity (copy structure).",
+      "Created interaction patterns that scale to future product marketing pages.",
+    ],
+
+    lessonsLearned: [
+      "Web3 UX wins when you translate protocol benefits into user outcomes (time saved, privacy, control).",
+      "Interactive flourishes must never be the only place critical information lives.",
     ],
   },
   {
@@ -573,6 +719,70 @@ export const WORKS: WorkItem[] = [
           "Section highlighting successful creators and example content collaborations.",
         image: "/images/screens/p3s3.webp",
       },
+    ],
+
+    responsibilities: [
+      "Led end-to-end UX for dual-audience acquisition: creators and brands.",
+      "Defined IA, conversion narrative, and reusable section patterns for marketplace landing.",
+      "Articulated earnings and collaboration flows in scannable steps with trust proof.",
+      "Prepared handoff-ready specs for engineering and growth experiments.",
+    ],
+
+    userNeeds: [
+      "Creators: understand how they earn, timelines, and legitimacy of brand deals.",
+      "Brands: clarity on discovery, briefs, and ROI story before signing up.",
+      "Both: credibility via integrations, testimonials, and recognizable social proof.",
+    ],
+
+    researchMethods: [
+      {
+        title: "Creator interviews (lightweight)",
+        description:
+          "Asked how they find brand deals today, what feels scammy, and what data they need before clicking “apply.”",
+      },
+      {
+        title: "Competitive positioning matrix",
+        description:
+          "Mapped affiliate vs influencer tools to find whitespace: collaboration + affiliate in one story.",
+      },
+      {
+        title: "Funnel critique sessions",
+        description:
+          "Reviewed scroll depth and CTA redundancy with marketing to avoid dead ends.",
+      },
+    ],
+
+    testingMethods: [
+      {
+        title: "First-click tests on hero value prop",
+        description:
+          "Validated whether creator vs brand visitors self-identified with the headline and scrolled to relevant proof.",
+        findings:
+          "Split hero proof (earnings snippet + integration strip) lifted comprehension scores in informal tests.",
+      },
+      {
+        title: "Hallway usability on mobile",
+        description:
+          "Users attempted “figure out how to earn” and “figure out how to hire creators” paths.",
+        findings:
+          "Step cards needed numeric labels (“1–2–3”) to imply order without walls of copy.",
+      },
+      {
+        title: "Accessibility pass on badges and orange accents",
+        description:
+          "Checked contrast on primary CTAs and link states for WCAG-aligned iteration.",
+      },
+    ],
+
+    outcomes: [
+      "Clear dual-track narrative reduced ambiguity for creator vs brand visitors landing cold.",
+      "Reusable modular sections support future localized campaigns.",
+      "Trust layer (integrations + testimonials) made the marketplace feel credible pre-launch.",
+    ],
+
+    lessonsLearned: [
+      "Two-sided markets need mirrored mental models — each side asks “what’s in it for me” within 10 seconds.",
+      "Visual energy (orange accents) works when paired with strict typographic rhythm so it stays premium.",
     ],
   },
   {
@@ -761,7 +971,71 @@ export const WORKS: WorkItem[] = [
           "Educational blog section supporting SEO and sharing technical insights related to CAD and software tools.",
         image: "/images/screens/p4s4.webp"
       }
-    ]
+    ],
+
+    responsibilities: [
+      "Owned information architecture merging courses, software services, and content marketing.",
+      "Designed course listing/detail templates and service pages with conversion-aware CTAs.",
+      "Conducted structuring workshops with stakeholders to avoid mixed messaging.",
+      "Built responsive layouts and prioritized performance for hybrid student + B2B visitors.",
+    ],
+
+    userNeeds: [
+      "Students quickly find the right CAD/CAM program level and enrollment path.",
+      "Prospects evaluating custom software understand scope, credibility, and how to enquire.",
+      "SEO discoverability without sacrificing readable navigation.",
+    ],
+
+    researchMethods: [
+      {
+        title: "Search intent & IA card sort",
+        description:
+          "Grouped offerings by user jobs-to-be-done (learn vs hire) versus by internal org chart.",
+      },
+      {
+        title: "Analog site audits (EdTech + dev shops)",
+        description:
+          "Borrowed trustworthy education patterns while keeping SME service clarity.",
+      },
+      {
+        title: "Content inventory",
+        description:
+          "Mapped existing brochures and PDFs into scannable web modules and FAQs.",
+      },
+    ],
+
+    testingMethods: [
+      {
+        title: "Tree testing (informal)",
+        description:
+          "Asked participants to locate “CAD course enrollment” vs “hire for custom tooling.”",
+        findings:
+          "Top nav split (“Courses” vs “Services”) outperformed a single mega-menu.",
+      },
+      {
+        title: "Prototype task tests",
+        description:
+          "Timed flows to syllabus, syllabus to CTA, and service detail to contact form.",
+        findings:
+          "Sticky CTA on mobile course pages prevented drop-off on long syllabus scrolls.",
+      },
+      {
+        title: "Cross-device QA",
+        description:
+          "Verified forms, breakpoints, image weight, and blog readability.",
+      },
+    ],
+
+    outcomes: [
+      "Resolved split-audience risk with explicit IA and mirrored templates for courses vs services.",
+      "Improved credibility through structured syllabus content and repeatable CTA placements.",
+      "SEO-friendly hub without burying transactional paths.",
+    ],
+
+    lessonsLearned: [
+      "When one brand sells education and contracting, duplication of nav labels is preferable to ambiguity.",
+      "Long syllabi need progressive disclosure modules, not accordion walls.",
+    ],
   },
   {
     slug: "harishree-masala-brand-website",
@@ -943,6 +1217,70 @@ export const WORKS: WorkItem[] = [
           "Section explaining the heritage, authenticity, and quality of the Harishree Masala brand.",
         image: "/images/screens/p5s4.webp",
       },
+    ],
+
+    responsibilities: [
+      "Led brand-led UX/UI, motion language, and frontend build (Next.js + Framer Motion patterns).",
+      "Balanced sensory storytelling with product clarity so shopping paths never get lost in visuals.",
+      "Prototyped interactive 3D product modal and refined performance budgets for heavy imagery.",
+      "Defined component behavior for hover, focus, and reduced-motion fallbacks.",
+    ],
+
+    userNeeds: [
+      "Feel cultural authenticity and premium quality before reading ingredients.",
+      "Explore products without friction on mobile (thumb reach, legible type on warm backgrounds).",
+      "Trust the brand through consistent story + product alignment.",
+    ],
+
+    researchMethods: [
+      {
+        title: "Brand & category mood board review",
+        description:
+          "Benchmarked premium food and D2C spice sites for hero patterns, motion intensity, and typography.",
+      },
+      {
+        title: "Lightweight user interviews",
+        description:
+          "Asked shoppers how they judge spice quality online when they can’t smell or taste.",
+      },
+      {
+        title: "Technical feasibility check",
+        description:
+          "Scoped 3D/modal interaction complexity vs LCP on real devices.",
+      },
+    ],
+
+    testingMethods: [
+      {
+        title: "Visual preference & clarity tests",
+        description:
+          "Compared calmer vs maximal hero treatments; measured perceived “premium” vs “overwhelming.”",
+        findings:
+          "Guided motion paired with strong typographic anchors read as premium; unbounded motion felt noisy.",
+      },
+      {
+        title: "Task flows: find a product → packaging detail",
+        description:
+          "Timed success on mobile for opening 3D modal and returning to catalog context.",
+        findings:
+          "Clear close affordance and backdrop lock improved confidence in the modal.",
+      },
+      {
+        title: "Accessibility & contrast sweeps",
+        description:
+          "Checked text on warm gradients; ensured focus rings and keyboard paths for interactive cards.",
+      },
+    ],
+
+    outcomes: [
+      "Delivered a differentiated brand site that feels tactile (3D) yet structured for commerce storytelling.",
+      "Established a motion system: spice accents move; UI chrome stays stable.",
+      "Improved perceived quality through hierarchy, not clutter.",
+    ],
+
+    lessonsLearned: [
+      "Bold palettes need strict grid discipline or the UX becomes ornamental.",
+      "Immersive brand sites still need ruthless performance tradeoffs — ship delight where it converts.",
     ],
   },
   {
@@ -1133,6 +1471,71 @@ export const WORKS: WorkItem[] = [
           "An engaging loading experience designed to keep users informed and engaged while their verification is securely processed. The creative loader animation reassures users that the system is actively working and prevents drop-off during wait time.",
         image: "/images/screens/p6s5.png",
       },
+    ],
+
+    responsibilities: [
+      "Conducted discovery around identity verification anxiety and Web3 literacy gaps.",
+      "Defined mobile-first flows: auth, dashboard, stepper verification, outcomes, and wait states.",
+      "Designed trust-forward UI patterns: progress, expectations, retries, privacy reassurance.",
+      "Prepared detailed specs for engineering on states, empty data, and edge failures.",
+    ],
+
+    userNeeds: [
+      "Know exactly what document or action is required at each step.",
+      "Understand time expectations and what happens to personal data.",
+      "Recover gracefully from failure without losing trust.",
+      "Complete flows on mobile with minimal cognitive load.",
+    ],
+
+    researchMethods: [
+      {
+        title: "Journey mapping with failure paths",
+        description:
+          "Mapped happy path plus drop-off points: upload errors, OCR delays, manual review, rejected docs.",
+      },
+      {
+        title: "Heuristic evaluation of verification products",
+        description:
+          "Compared banking KYC and Web3 wallets for clarity of status language and error copy.",
+      },
+      {
+        title: "Microcopy workshop",
+        description:
+          "Aligned legal/compliance tone with plain-language explanations users actually read.",
+      },
+    ],
+
+    testingMethods: [
+      {
+        title: "Moderated usability tests (mobile)",
+        description:
+          "Users completed verification tasks with think-aloud on mid/high fidelity prototypes.",
+        findings:
+          "Progress + “why we need this” microcopy at each step reduced abandonment vs a bare stepper.",
+      },
+      {
+        title: "Cognitive walkthrough with engineering",
+        description:
+          "Step-by-step review of system states: pending, success, partial failure, full rejection.",
+        findings:
+          "Explicit next actions on failure outperformed generic “try again” messaging.",
+      },
+      {
+        title: "Visual accessibility review",
+        description:
+          "Validated contrast for soft palette, focus order, and touch target sizes on small screens.",
+      },
+    ],
+
+    outcomes: [
+      "Turned a high-anxiety compliance flow into a guided experience with predictable feedback.",
+      "Reduced ambiguity through consistent status vocabulary across dashboard, steps, and results.",
+      "Created reusable patterns for loaders, retries, and secure waiting moments.",
+    ],
+
+    lessonsLearned: [
+      "Trust in identity products is mostly about predictability — users forgive wait time if expectations are clear.",
+      "Web3 UX must avoid jargon in the task layer even if the product is deeply technical underneath.",
     ],
   }
 ];
