@@ -6,6 +6,7 @@ import {
   ArrowUpRight,
   ExternalLink,
   Download,
+  MapPin,
 } from "lucide-react";
 import SectionHeading from "../ui/SectionHeading";
 
@@ -27,14 +28,12 @@ const contactItems = [
     iconColor: "text-blue-600",
   },
   {
-    icon: Download,
-    label: "Download Resume",
-    value:
-      "Download my latest resume including product experience.",
-    href: "/JT-Product Designer.pdf",
+    icon: MapPin,
+    label: "Location",
+    value: "Ahmedabad Gujarat, India",
+    href: "https://maps.google.com/?q=Ahmedabad,Gujarat,India",
     accent: "from-emerald-500/15 to-teal-500/15 border-emerald-500/20",
     iconColor: "text-emerald-600",
-    download: true,
   },
 ];
 
@@ -73,7 +72,6 @@ export default function ContactSection() {
                 <a
                   key={item.label}
                   href={item.href}
-                  download={item.download}
                   target={
                     item.href.startsWith("http") ? "_blank" : undefined
                   }
@@ -106,8 +104,8 @@ export default function ContactSection() {
 
                   <p
                     className={`font-medium text-black ${item.label === "Email"
-                        ? "break-all text-sm sm:text-base"
-                        : "text-sm sm:text-base"
+                      ? "break-all text-sm sm:text-base"
+                      : "text-sm sm:text-base"
                       }`}
                   >
                     {item.value}
