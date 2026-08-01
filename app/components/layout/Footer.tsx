@@ -26,7 +26,7 @@ export default function Footer() {
                   </div>
 
                   <p className="text-black/60 text-sm leading-relaxed max-w-xs">
-                    UI/UX Designer & Frontend Engineer building scalable
+                    Product Engineer web3 & Ai focused building scalable
                     digital products with design clarity and technical precision.
                   </p>
                 </div>

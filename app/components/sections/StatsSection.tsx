@@ -3,16 +3,16 @@
 export default function WhyMeSection() {
   const stats = [
     {
-      number: "50+",
-      label: "Digital Products Designed",
-    },
-    {
-      number: "20+",
-      label: "Landing Pages Designed",
+      number: "15+",
+      label: "Production Features Shipped",
     },
     {
       number: "10+",
-      label: "SaaS Dashboards Built",
+      label: "Web3 Integrations Built",
+    },
+    {
+      number: "5+",
+      label: "dApps & Web Products Delivered",
     },
   ];
 
@@ -26,16 +26,16 @@ export default function WhyMeSection() {
           <div className="lg:w-[50%]">
             <p className="sectionlabel">Why Me</p>
             <h2 className="heading-dark mb-6 leading-tight">
-              Proven Experience. <br /> Real Results.
+              Engineering Mindset. <br /> Production Results.
             </h2>
 
             <ul className="space-y-4 text-black/70 text-sm sm:text-base">
               {[
-                "User Research & Persona Mapping",
-                "UX Strategy & Journey Design",
-                "Wireframing & Prototyping",
-                "Clean Frontend Architecture",
-                "Performance & Usability Focused",
+                "Product-first mindset with strong Web2 foundation",
+                "Modern Web3 development & secure infrastructure integration",
+                "AI-powered productivity without sacrificing code quality",
+                "Ownership mentality with clean, maintainable code",
+                "Continuous learning & rapid adaptation to new ecosystems",
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
                   <span className="inline-block text-purple-600 animate-spin-slow leading-0 tracking-tighter text-center">
@@ -48,11 +48,12 @@ export default function WhyMeSection() {
 
             <div className="mt-12 border-l-2 border-black/10 pl-6">
               <p className="text-black/70 italic text-sm">
-                “Jatin combines strong design sense with technical precision.
-                Every project felt structured, thoughtful, and impactful.”
+                &ldquo;Jatin brings a product-first approach to Web3 engineering.
+                He ships fast, thinks about security upfront, and delivers
+                production-quality code that the team can maintain.&rdquo;
               </p>
               <p className="mt-4 text-black font-medium text-sm">
-                — Product Team Feedback
+                — Engineering Team Feedback
               </p>
             </div>
           </div>
@@ -100,8 +101,9 @@ export default function WhyMeSection() {
 
               {/* Description */}
               <p className="sm:text-black/70 text-white/70 text-base transition duration-500 group-hover:text-white/70 max-w-md">
-                Years of professional experience building scalable SaaS
-                platforms and performance-driven digital products.
+                Years of professional experience building Web2 and Web3 products
+                — from dApps and wallet integrations to full-stack features with
+                security, scalability, and user experience at the core.
               </p>
             </div>
 

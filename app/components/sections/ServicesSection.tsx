@@ -19,7 +19,7 @@ export default function ServicesSection() {
         <SectionHeading
           label="My Expertise"
           heading="What I Do Best"
-          subheading="From concept to execution, I craft scalable digital experiences that combine design thinking and frontend engineering."
+          subheading="From product discovery to production deployment, I ship Web2 and Web3 features that solve real business problems with security and scalability built in."
         />
 
         {/* Grid Layout */}
@@ -33,12 +33,13 @@ export default function ServicesSection() {
             </div>
 
             <h3 className="mb-4 heading-light-sm text-black! transition duration-500">
-              UX Strategy & User Research
+              Product Engineering
             </h3>
 
             <p className="max-w-sm text-black/70 transition duration-500 ">
-              Conducting user research, defining personas, mapping journeys,
-              and aligning product direction with real user needs and business goals.
+              Taking features from idea to launch solving business problems
+              with scalable architecture, strong UX, and code teams can maintain
+              and extend over time.
             </p>
           </div>
 
@@ -51,12 +52,12 @@ export default function ServicesSection() {
             </div>
 
             <h3 className="mb-4 heading-light-sm text-black! transition duration-500">
-              Product Design & Wireframing
+              Web3 Development
             </h3>
 
             <p className="max-w-md text-black/70 transition duration-500">
-              Translating ideas into structured wireframes, user flows, and
-              high-fidelity interfaces with usability at the core.
+              Building dApps on Ethereum smart wallets, Account Abstraction,
+              gasless transactions, NFT integration, and on chain authentication.
             </p>
           </div>
 
@@ -77,11 +78,12 @@ export default function ServicesSection() {
       to-pink-500 
       bg-clip-text 
       text-transparent!">
-              Creative Design
+              Security-first Development
             </h4>
 
             <p className="text-sm text-white/60 group-hover:text-black/70 transition duration-500">
-              Memorable designs that feel intuitive and comfortable.
+              Secure auth, wallet safety, and transaction protection built into
+              every layer of the stack.
             </p>
           </div>
 
@@ -94,12 +96,12 @@ export default function ServicesSection() {
             </div>
 
             <h4 className="mb-3 heading-light-sm text-black! transition duration-500">
-              Scalable Design Systems
+              Frontend Architecture
             </h4>
 
             <p className="text-sm text-black/70 transition duration-500">
-              Building reusable component libraries and structured visual
-              systems for consistency across digital products.
+              React and Next.js with TypeScript clean component structures,
+              responsive UI, and performance tuned for production.
             </p>
           </div>
 
@@ -112,12 +114,13 @@ export default function ServicesSection() {
             </div>
 
             <h3 className="mb-4 heading-light-sm text-black! transition duration-500">
-              Frontend Architecture
+              AI Accelerated Development
             </h3>
 
             <p className="max-w-md text-black/70 transition duration-500">
-              Translating design systems into scalable, maintainable frontend
-              structures with clean component-driven architecture.
+              Agentic AI workflows with Claude, ChatGPT, and Cursor faster
+              research, debugging, and prototyping with manual validation on
+              every decision.
             </p>
           </div>
 
@@ -130,12 +133,12 @@ export default function ServicesSection() {
             </div>
 
             <h3 className="mb-4 heading-light-sm text-black! transition duration-500 ">
-              Performance & Optimization
+              Backend & Infrastructure
             </h3>
 
             <p className="max-w-sm text-black/70 transition duration-500">
-              Ensuring accessibility, responsiveness, and production-grade
-              performance across devices and environments.
+              Node.js APIs, Firebase, MongoDB, and PostgreSQL reliable
+              backend systems with clean REST design and CI/CD deployment.
             </p>
           </div>
 

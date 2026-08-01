@@ -94,19 +94,19 @@ export default function HeroSection() {
         <div className="flex flex-wrap justify-center gap-3 mb-8">
           <div className="chip">
             <Palette size={14} className="text-purple-300" />
-            <span>UI/UX Design</span>
+            <span>Product Engineer</span>
           </div>
           <div className="chip">
             <LayoutGrid size={14} className="text-sky-300" />
-            <span>Design Systems</span>
+            <span>Web3 Engineer</span>
           </div>
           <div className="chip">
             <Code2 size={14} className="text-emerald-300" />
-            <span>Frontend</span>
+            <span>AI-powered Builder</span>
           </div>
           <div className="chip">
             <Sparkles size={14} className="text-amber-300" />
-            <span>AI + Product</span>
+            <span>Security-focused Developer</span>
           </div>
         </div>
 
@@ -118,18 +118,21 @@ export default function HeroSection() {
           </p>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white leading-tight tracking-tight">
-            Designing & Building
+            Building Secure Web3 Products
             <br />
             <span className="text-white/60">
-              Scalable Digital Products
+              & Modern Digital Experiences
             </span>
             <br />
-            with Precision & AI
+            with AI-Powered Engineering
           </h1>
 
           <p className="mt-6 sm:mt-8 text-white/60 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            I design and build high-performance web applications with a strong
-            focus on usability, scalability, and modern product thinking.
+            Product Engineer with experience across Web2 and Web3 — shipping
+            dApps, Ethereum integrations, Account Abstraction, gasless
+            transactions, and smart wallet flows. I use AI-assisted development
+            and prompt engineering to build rapidly while maintaining production
+            quality, security, scalability, and strong user experience.
           </p>
 
           {/* BUTTONS */}
@@ -139,7 +142,7 @@ export default function HeroSection() {
             </Button>
 
             <Button variant="white" href="#contact">
-              Get in Touch
+              Build Secure Products
             </Button>
           </div>
         </div>

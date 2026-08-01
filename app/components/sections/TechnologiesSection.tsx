@@ -6,42 +6,42 @@ import {
     SiNextdotjs,
     SiTailwindcss,
     SiFigma,
-    SiAdobephotoshop,
-    SiAdobeillustrator,
-    SiJavascript,
     SiTypescript,
     SiNodedotjs,
     SiMongodb,
-    SiRedux,
-    SiHtml5,
-    SiCss3,
-    SiBootstrap,
-    SiMui,
+    SiPostgresql,
+    SiFirebase,
+    SiEthereum,
+    SiDocker,
     SiOpenai,
-    SiFramer,
     SiVercel,
     SiGithub,
+    SiExpo,
+    SiWalletconnect,
+    SiExpress,
+    SiGit,
 } from "react-icons/si";
 
 export default function TechnologiesSection() {
     const technologies = [
         { icon: SiReact, name: "React", color: "#61DAFB" },
         { icon: SiNextdotjs, name: "Next.js", color: "#ffffff" },
-        { icon: SiTailwindcss, name: "Tailwind", color: "#38BDF8" },
-        { icon: SiFigma, name: "Figma", color: "#F24E1E" },
-        { icon: SiAdobephotoshop, name: "Photoshop", color: "#31A8FF" },
-        { icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
         { icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
+        { icon: SiTailwindcss, name: "Tailwind CSS", color: "#38BDF8" },
+        { icon: SiExpo, name: "Expo", color: "#ffffff" },
         { icon: SiNodedotjs, name: "Node.js", color: "#3C873A" },
+        { icon: SiExpress, name: "Express", color: "#ffffff" },
+        { icon: SiFirebase, name: "Firebase", color: "#FFCA28" },
         { icon: SiMongodb, name: "MongoDB", color: "#47A248" },
-        { icon: SiRedux, name: "Redux Toolkit", color: "#764ABC" },
-        { icon: SiHtml5, name: "HTML5", color: "#E34F26" },
-        { icon: SiCss3, name: "CSS3", color: "#1572B6" },
-        { icon: SiBootstrap, name: "Bootstrap", color: "#7952B3" },
-        { icon: SiMui, name: "MUI", color: "#007FFF" },
-        { icon: SiOpenai, name: "OpenAI", color: "#10A37F" },
+        { icon: SiPostgresql, name: "PostgreSQL", color: "#4169E1" },
+        { icon: SiEthereum, name: "Ethereum", color: "#627EEA" },
+        { icon: SiWalletconnect, name: "WalletConnect", color: "#3B99FC" },
+        { icon: SiOpenai, name: "ChatGPT", color: "#10A37F" },
         { icon: SiVercel, name: "Vercel", color: "#ffffff" },
-        { icon: SiGithub, name: "GitHub", color: "#ffffff" },
+        { icon: SiGithub, name: "GitHub Actions", color: "#ffffff" },
+        { icon: SiDocker, name: "Docker", color: "#2496ED" },
+        { icon: SiFigma, name: "Figma", color: "#F24E1E" },
+        { icon: SiGit, name: "Git", color: "#F05032" },
     ];
 
     const duplicated = [...technologies, ...technologies];
@@ -59,21 +59,21 @@ export default function TechnologiesSection() {
 
                     <h2 className="text-4xl sm:text-5xl font-normal leading-tight text-white">
                         Technologies I use to build <br />
-                        scalable digital products.
+                        secure Web3 products.
                     </h2>
 
                     <p className="mt-6 text-white/60 max-w-md">
-                        A modern stack combining design tools, frontend frameworks,
-                        scalable architectures, and backend technologies to deliver
-                        high-performance applications.
+                        A modern stack spanning frontend frameworks, backend
+                        services, Web3 infrastructure, AI tooling, and deployment
+                        platforms — built for production-grade product engineering.
                     </p>
 
                     <ul className="mt-8 space-y-3 text-white/70">
-                        <li className="flex items-center gap-2"><Check size={18} className="text-purple-500" /> Modern UI Design Systems</li>
-                        <li className="flex items-center gap-2"><Check size={18} className="text-purple-500"/> React & Next.js Architecture</li>
-                        <li className="flex items-center gap-2"><Check size={18} className="text-purple-500"/> TypeScript & Scalable Code</li>
-                        <li className="flex items-center gap-2"><Check size={18} className="text-purple-500"/> Cloud-ready Backend</li>
-                        <li className="flex items-center gap-2"><Check size={18} className="text-purple-500"/> Performance Optimization</li>
+                        <li className="flex items-center gap-2"><Check size={18} className="text-purple-500" /> React, Next.js & TypeScript</li>
+                        <li className="flex items-center gap-2"><Check size={18} className="text-purple-500"/> Ethereum & Smart Wallet Integration</li>
+                        <li className="flex items-center gap-2"><Check size={18} className="text-purple-500"/> Account Abstraction & Gasless Flows</li>
+                        <li className="flex items-center gap-2"><Check size={18} className="text-purple-500"/> Node.js, Firebase & PostgreSQL</li>
+                        <li className="flex items-center gap-2"><Check size={18} className="text-purple-500"/> AI-Assisted Development Workflows</li>
                     </ul>
                 </div>
 
